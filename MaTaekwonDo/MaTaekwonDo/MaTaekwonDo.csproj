@@ -54,6 +54,12 @@
     <Compile Include="Bejelentkezes.Designer.cs">
       <DependentUpon>Bejelentkezes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Felhasznalok.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Felhasznalok.Designer.cs">
+      <DependentUpon>Felhasznalok.cs</DependentUpon>
+    </Compile>
     <Compile Include="Index.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +71,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Bejelentkezes.resx">
       <DependentUpon>Bejelentkezes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Felhasznalok.resx">
+      <DependentUpon>Felhasznalok.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Index.resx">
       <DependentUpon>Index.cs</DependentUpon>

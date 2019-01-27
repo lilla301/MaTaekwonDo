@@ -21,21 +21,26 @@ namespace MaTaekwonDo
         {
             Application.Exit();
         }
-
         private void buttonLog_Click(object sender, EventArgs e)
         {
             Adatbazis a = new Adatbazis();
             MySQLDataInterface mdi = a.kapcsolodas();
             mdi.open();
-            string query = "SELECT COUNT(*) FROM user WHERE felhasznalonev= \"" + textBoxUname.Text + "\" and jelszo =\"" + textBoxPwd.Text + "\"";
+            string query = "SELECT categoryID FROM user WHERE felhasznalonev= \"" + textBoxUname.Text + "\" and jelszo =\"" + textBoxPwd.Text + "\"";
             string result = mdi.executeScalarQuery(query);
             if (result == "1")
             {
+                
+                    Index i=new Index(result.ToString());
+                    i.Show();
+                    this.Hide();
 
-                Felhasznalok fh = new Felhasznalok();
-                fh.Show();
+            }
+            else if (result == "2" || result=="3")
+            {
+                Index i = new Index(result.ToString());
+                i.Show();
                 this.Hide();
-
             }
             else
             {
@@ -75,6 +80,5 @@ namespace MaTaekwonDo
                 buttonLog.PerformClick();
             }
         }
-    }
     }
 }

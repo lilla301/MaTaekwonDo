@@ -41,6 +41,7 @@
             this.buttonHarmat = new System.Windows.Forms.Button();
             this.buttonSzalay = new System.Windows.Forms.Button();
             this.buttonSzasz = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonExit
@@ -63,7 +64,7 @@
             this.linkLabel1.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.linkLabel1.Location = new System.Drawing.Point(502, 505);
+            this.linkLabel1.Location = new System.Drawing.Point(528, 647);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(267, 25);
             this.linkLabel1.TabIndex = 17;
@@ -76,7 +77,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(186, 337);
+            this.label2.Location = new System.Drawing.Point(212, 479);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 28);
             this.label2.TabIndex = 13;
@@ -88,7 +89,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(186, 298);
+            this.label1.Location = new System.Drawing.Point(212, 440);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(188, 28);
             this.label1.TabIndex = 14;
@@ -98,7 +99,7 @@
             // 
             this.textBoxPwd.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.textBoxPwd.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxPwd.Location = new System.Drawing.Point(522, 333);
+            this.textBoxPwd.Location = new System.Drawing.Point(548, 475);
             this.textBoxPwd.Name = "textBoxPwd";
             this.textBoxPwd.Size = new System.Drawing.Size(229, 32);
             this.textBoxPwd.TabIndex = 8;
@@ -108,7 +109,7 @@
             // 
             this.textBoxUname.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.textBoxUname.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxUname.Location = new System.Drawing.Point(522, 294);
+            this.textBoxUname.Location = new System.Drawing.Point(548, 436);
             this.textBoxUname.Name = "textBoxUname";
             this.textBoxUname.Size = new System.Drawing.Size(229, 32);
             this.textBoxUname.TabIndex = 7;
@@ -120,7 +121,7 @@
             this.buttonLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLog.Font = new System.Drawing.Font("Cambria", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonLog.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonLog.Location = new System.Drawing.Point(522, 434);
+            this.buttonLog.Location = new System.Drawing.Point(548, 576);
             this.buttonLog.Name = "buttonLog";
             this.buttonLog.Size = new System.Drawing.Size(229, 47);
             this.buttonLog.TabIndex = 9;
@@ -133,7 +134,7 @@
             this.buttonSolti.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonSolti.BackgroundImage")));
             this.buttonSolti.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonSolti.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSolti.Location = new System.Drawing.Point(1031, 3);
+            this.buttonSolti.Location = new System.Drawing.Point(1057, 145);
             this.buttonSolti.Name = "buttonSolti";
             this.buttonSolti.Size = new System.Drawing.Size(182, 279);
             this.buttonSolti.TabIndex = 10;
@@ -145,7 +146,7 @@
             this.buttonMate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonMate.BackgroundImage")));
             this.buttonMate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonMate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMate.Location = new System.Drawing.Point(843, 3);
+            this.buttonMate.Location = new System.Drawing.Point(869, 145);
             this.buttonMate.Name = "buttonMate";
             this.buttonMate.Size = new System.Drawing.Size(182, 279);
             this.buttonMate.TabIndex = 11;
@@ -157,7 +158,7 @@
             this.buttonHarmat.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonHarmat.BackgroundImage")));
             this.buttonHarmat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonHarmat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonHarmat.Location = new System.Drawing.Point(522, 3);
+            this.buttonHarmat.Location = new System.Drawing.Point(548, 145);
             this.buttonHarmat.Name = "buttonHarmat";
             this.buttonHarmat.Size = new System.Drawing.Size(229, 279);
             this.buttonHarmat.TabIndex = 12;
@@ -169,7 +170,7 @@
             this.buttonSzalay.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonSzalay.BackgroundImage")));
             this.buttonSzalay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonSzalay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSzalay.Location = new System.Drawing.Point(191, 3);
+            this.buttonSzalay.Location = new System.Drawing.Point(217, 145);
             this.buttonSzalay.Name = "buttonSzalay";
             this.buttonSzalay.Size = new System.Drawing.Size(182, 279);
             this.buttonSzalay.TabIndex = 15;
@@ -181,12 +182,24 @@
             this.buttonSzasz.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonSzasz.BackgroundImage")));
             this.buttonSzasz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonSzasz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSzasz.Location = new System.Drawing.Point(3, 3);
+            this.buttonSzasz.Location = new System.Drawing.Point(29, 145);
             this.buttonSzasz.Name = "buttonSzasz";
             this.buttonSzasz.Size = new System.Drawing.Size(182, 279);
             this.buttonSzasz.TabIndex = 16;
             this.buttonSzasz.UseVisualStyleBackColor = true;
             this.buttonSzasz.Click += new System.EventHandler(this.buttonSzasz_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Cambria", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.Location = new System.Drawing.Point(540, -3);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(272, 43);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "MaTaekwonDo";
             // 
             // Bejelentkezes
             // 
@@ -195,6 +208,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -231,5 +245,6 @@
         private System.Windows.Forms.Button buttonHarmat;
         private System.Windows.Forms.Button buttonSzalay;
         private System.Windows.Forms.Button buttonSzasz;
+        private System.Windows.Forms.Label label3;
     }
 }

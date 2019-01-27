@@ -42,6 +42,8 @@
             this.buttonProfil = new System.Windows.Forms.Button();
             this.toolTipLogin = new System.Windows.Forms.ToolTip(this.components);
             this.buttonFelhKezelo = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label2
@@ -117,7 +119,6 @@
             this.buttonLogin.Size = new System.Drawing.Size(191, 173);
             this.buttonLogin.TabIndex = 9;
             this.buttonLogin.UseVisualStyleBackColor = false;
-            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // buttonWebOldal
             // 
@@ -182,6 +183,28 @@
             this.buttonFelhKezelo.UseVisualStyleBackColor = false;
             this.buttonFelhKezelo.Click += new System.EventHandler(this.buttonFelhKezelo_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Cambria", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.Location = new System.Drawing.Point(366, 52);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(0, 43);
+            this.label5.TabIndex = 15;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Cambria", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label6.Location = new System.Drawing.Point(366, 52);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(0, 43);
+            this.label6.TabIndex = 16;
+            // 
             // Index
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -189,6 +212,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.buttonFelhKezelo);
             this.Controls.Add(this.buttonProfil);
             this.Controls.Add(this.buttonLicense);
@@ -225,6 +250,8 @@
         private System.Windows.Forms.Button buttonProfil;
         private System.Windows.Forms.ToolTip toolTipLogin;
         private System.Windows.Forms.Button buttonFelhKezelo;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }
 
