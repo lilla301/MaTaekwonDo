@@ -8,5 +8,16 @@ namespace MaTaekwonDo
 {
     class Adatbazis
     {
+        public MySQLDataInterface kapcsolodas()
+        {
+            MySQLDataInterface mdi = new MySQLDataInterface();
+            mdi.setErrorToUserInterface(true);
+            mdi.setErrorToGraphicalUserInterface(false);
+            mdi.setKapcsolodasSzerverAdatok("localhost", "usermanagment", "3306");
+            mdi.setKapcsolodasFelhasznaloiAdatok("root", "");
+            mdi.kapcsolodasAdatBazishoz();
+
+            return mdi;
+        }
     }
 }
