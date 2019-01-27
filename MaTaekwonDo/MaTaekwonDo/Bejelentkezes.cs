@@ -23,10 +23,12 @@ namespace MaTaekwonDo
         }
         private void buttonLog_Click(object sender, EventArgs e)
         {
+            string user = textBoxUname.Text;
+            string pwd = textBoxPwd.Text;
             Adatbazis a = new Adatbazis();
             MySQLDataInterface mdi = a.kapcsolodas();
             mdi.open();
-            string query = "SELECT categoryID FROM user WHERE felhasznalonev= \"" + textBoxUname.Text + "\" and jelszo =\"" + textBoxPwd.Text + "\"";
+            string query = "SELECT categoryID FROM user WHERE felhasznalonev= \"" + user + "\" and jelszo =\"" + pwd + "\"";
             string result = mdi.executeScalarQuery(query);
             if (result == "1")
             {

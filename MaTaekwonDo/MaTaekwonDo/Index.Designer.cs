@@ -35,7 +35,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonExit = new System.Windows.Forms.Button();
-            this.buttonLogin = new System.Windows.Forms.Button();
+            this.buttonLogOut = new System.Windows.Forms.Button();
             this.buttonWebOldal = new System.Windows.Forms.Button();
             this.buttonDig = new System.Windows.Forms.Button();
             this.buttonLicense = new System.Windows.Forms.Button();
@@ -44,6 +44,8 @@
             this.buttonFelhKezelo = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -108,17 +110,17 @@
             this.buttonExit.UseVisualStyleBackColor = false;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
-            // buttonLogin
+            // buttonLogOut
             // 
-            this.buttonLogin.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.buttonLogin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonLogin.BackgroundImage")));
-            this.buttonLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLogin.Location = new System.Drawing.Point(12, 535);
-            this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(191, 173);
-            this.buttonLogin.TabIndex = 9;
-            this.buttonLogin.UseVisualStyleBackColor = false;
+            this.buttonLogOut.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.buttonLogOut.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonLogOut.BackgroundImage")));
+            this.buttonLogOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLogOut.Location = new System.Drawing.Point(12, 535);
+            this.buttonLogOut.Name = "buttonLogOut";
+            this.buttonLogOut.Size = new System.Drawing.Size(191, 173);
+            this.buttonLogOut.TabIndex = 9;
+            this.buttonLogOut.UseVisualStyleBackColor = false;
             // 
             // buttonWebOldal
             // 
@@ -205,6 +207,17 @@
             this.label6.Size = new System.Drawing.Size(0, 43);
             this.label6.TabIndex = 16;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(385, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(57, 49);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            // 
             // Index
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -212,6 +225,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.buttonFelhKezelo);
@@ -219,7 +233,7 @@
             this.Controls.Add(this.buttonLicense);
             this.Controls.Add(this.buttonDig);
             this.Controls.Add(this.buttonWebOldal);
-            this.Controls.Add(this.buttonLogin);
+            this.Controls.Add(this.buttonLogOut);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -231,6 +245,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MaTaekwonDo";
             this.Load += new System.EventHandler(this.Index_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,7 +258,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button buttonExit;
-        private System.Windows.Forms.Button buttonLogin;
+        private System.Windows.Forms.Button buttonLogOut;
         private System.Windows.Forms.Button buttonWebOldal;
         private System.Windows.Forms.Button buttonDig;
         private System.Windows.Forms.Button buttonLicense;
@@ -252,6 +267,7 @@
         private System.Windows.Forms.Button buttonFelhKezelo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

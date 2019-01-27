@@ -80,7 +80,7 @@ namespace MaTaekwonDo
         {
             toolTipLogin.SetToolTip(buttonDig, "Digitális Anyag");
             toolTipLogin.SetToolTip(buttonExit, "A program bezárása");
-            toolTipLogin.SetToolTip(buttonLogin, "Bejelentkezés");
+            toolTipLogin.SetToolTip(buttonLogOut, "Kijelentkezés");
             toolTipLogin.SetToolTip(buttonLicense, "Az alkotóról");
             toolTipLogin.SetToolTip(buttonWebOldal, "A hivatalos weboldal");
             toolTipLogin.SetToolTip(buttonProfil, "Felhasználói profil");
