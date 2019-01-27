@@ -14,7 +14,7 @@ namespace MaTaekwonDo
     {
         public Bejelentkezes()
         {
-            InitializeComponent();
+            InitializeComponent();   
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
@@ -22,7 +22,7 @@ namespace MaTaekwonDo
             Application.Exit();
         }
         private void buttonLog_Click(object sender, EventArgs e)
-        {
+        { 
             string user = textBoxUname.Text;
             string pwd = textBoxPwd.Text;
             Adatbazis a = new Adatbazis();

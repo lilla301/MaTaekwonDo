@@ -12,9 +12,56 @@ namespace MaTaekwonDo
 {
     public partial class Felhasznalok : Form
     {
+        private MySQLDataInterface mdi;
+        private DataTable category;
+        private DataTable user;
+        private DataGridViewComboBoxColumn klub;
+        private DataGridViewComboBoxColumn ovfok;
+        private DataGridViewCheckBoxColumn neme;
+        private DataGridViewComboBoxColumn szint;
+        private DataTable tableKlub;
+        private DataTable tableSzint;
+        private DataTable tableOv;
+        bool modositottE = false;
+        Adatbazis a = new Adatbazis();
+        Adatok d = new Adatok();
         public Felhasznalok()
         {
             InitializeComponent();
+        }
+
+        private void Felhasznalok_Load(object sender, EventArgs e)
+        {
+            mdi = a.kapcsolodas();
+            mdi.open();
+            category = mdi.getToDataTable("SELECT * FROM category");
+            dataGridViewCategory.DataSource = category;
+            dataGridViewCategory.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewCategory.Columns[0].Width = 20;
+            dataGridViewCategory.Columns[1].Width = 70;
+
+            user = mdi.getToDataTable("SELECT * FROM user");
+            dataGridViewUser.DataSource = user;
+            dataGridViewUser.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewUser.Columns[0].Width = 20;
+            dataGridViewUser.Columns[1].Width = 20;
+            dataGridViewUser.AllowUserToDeleteRows = false;
+            dataGridViewUser.ReadOnly = false;
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            if (modositottE)
+            {
+                if (MessageBox.Show("Nem mentett módosításai vannak. Biztosan ki szeretne lépni?", "Kilépés", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Application.Exit();
+                }
+            }
+            else
+            {
+                Application.Exit();
+            }
         }
     }
 }

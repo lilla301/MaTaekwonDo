@@ -12,7 +12,6 @@ namespace MaTaekwonDo
 {
     public partial class Index : Form
     {
-        Bejelentkezes b = new Bejelentkezes();
 
         public Index(string role)
         {
@@ -73,7 +72,9 @@ namespace MaTaekwonDo
 
         private void buttonProfil_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Jelenleg nem elérhető");
+            Profil p = new Profil();
+            p.Show();
+            this.Hide();
         }
 
         private void Index_Load(object sender, EventArgs e)
@@ -89,7 +90,9 @@ namespace MaTaekwonDo
 
         private void buttonFelhKezelo_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Jelenleg nem elérhető");
+            Felhasznalok fh = new Felhasznalok();
+            fh.Show();
+            this.Hide();
         }
     }
 }
