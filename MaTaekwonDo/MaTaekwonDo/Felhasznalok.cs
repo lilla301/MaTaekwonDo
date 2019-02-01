@@ -40,27 +40,25 @@ namespace MaTaekwonDo
             dataGridViewCategory.Columns[0].Width = 20;
             dataGridViewCategory.Columns[1].Width = 70;
 
-            user = mdi.getToDataTable("SELECT * FROM user");
+            user = mdi.getToDataTable("Select category.name, szemelyID, felhasznalonev, jelszo, vezeteknev, keresztnev, email, neme, klub.nev, ovfokozatok.nev FROM user, ovfokozatok, category, klub WHERE klub.ID = user.klub AND category.id = user.categoryID AND ovfokozatok.id = user.ovfokozat");
             dataGridViewUser.DataSource = user;
             dataGridViewUser.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewUser.Columns[0].Width = 20;
-            dataGridViewUser.Columns[1].Width = 20;
-            dataGridViewUser.AllowUserToDeleteRows = false;
-            dataGridViewUser.ReadOnly = false;
+            dataGridViewUser.Columns[7].Width = 40;
 
-            //dataGridViewUser.Columns["szemelyID"].Visible = true;
-            //dataGridViewUser.Columns["categoryID"].Visible = false;
-            //dataGridViewUser.Columns["klub"].Visible = false;
-            dataGridViewUser.Columns["categoryID"].HeaderText = "Felhasználói szint";
-            dataGridViewUser.Columns["szemelyID"].HeaderText = "ID";
+            dataGridViewUser.Columns["name"].HeaderText = "Felhasználói szint";
+            dataGridViewUser.Columns["szemelyID"].HeaderText = "Személy azonosító";
             dataGridViewUser.Columns["felhasznalonev"].HeaderText = "Felhasználónév";
             dataGridViewUser.Columns["jelszo"].HeaderText = "Jelszó";
             dataGridViewUser.Columns["vezeteknev"].HeaderText = "Vezetéknév";
             dataGridViewUser.Columns["keresztnev"].HeaderText = "Keresztnév";
-            dataGridViewUser.Columns["email"].HeaderText = "Email";
-            dataGridViewUser.Columns["neme"].HeaderText = "Férfi";
-            //dataGridViewUser.Columns["ovfokozat"].Visible = false;
-            modositottE = false;
+            dataGridViewUser.Columns["email"].HeaderText = "Email Cím";
+            dataGridViewUser.Columns["neme"].HeaderText = "Nem";
+            dataGridViewUser.Columns["nev"].HeaderText = "Klub";
+            dataGridViewUser.Columns["nev1"].HeaderText = "Övfokozat";
+
+
+            dataGridViewUser.AllowUserToDeleteRows = false;
+            dataGridViewUser.ReadOnly = false;
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
