@@ -36,6 +36,8 @@
             this.buttonDel = new System.Windows.Forms.Button();
             this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
+            this.buttonBetolt = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCategory)).BeginInit();
             this.SuspendLayout();
@@ -128,6 +130,28 @@
             this.buttonExit.UseVisualStyleBackColor = false;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
+            // buttonBetolt
+            // 
+            this.buttonBetolt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.buttonBetolt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBetolt.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonBetolt.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonBetolt.Location = new System.Drawing.Point(12, 282);
+            this.buttonBetolt.Name = "buttonBetolt";
+            this.buttonBetolt.Size = new System.Drawing.Size(122, 48);
+            this.buttonBetolt.TabIndex = 17;
+            this.buttonBetolt.Text = "Betölt";
+            this.buttonBetolt.UseVisualStyleBackColor = false;
+            this.buttonBetolt.Click += new System.EventHandler(this.buttonBetolt_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(160, 569);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 18;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // Felhasznalok
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -135,6 +159,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.buttonBetolt);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.dataGridViewUser);
             this.Controls.Add(this.buttonMentes);
@@ -150,6 +176,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCategory)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -161,5 +188,7 @@
         private System.Windows.Forms.Button buttonDel;
         private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.Button buttonExit;
+        private System.Windows.Forms.Button buttonBetolt;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
