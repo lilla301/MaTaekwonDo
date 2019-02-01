@@ -72,9 +72,9 @@ namespace MaTaekwonDo
             dataGridViewUser.Columns["nev1"].HeaderText = "Övfokozat";
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void textBoxkNevSzuro_TextChanged(object sender, EventArgs e)
         {
-            user.DefaultView.RowFilter = string.Format("Convert([{0}],'System.String') Like '%{1}'", knevSzuro, textBox1.Text);
+            user.DefaultView.RowFilter = string.Format("Convert([{0}],'System.String') Like '%{1}'", knevSzuro, textBoxkNevSzuro.Text);
         }
     }
 }

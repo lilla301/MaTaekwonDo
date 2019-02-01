@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Felhasznalok));
             this.dataGridViewUser = new System.Windows.Forms.DataGridView();
             this.buttonMentes = new System.Windows.Forms.Button();
@@ -37,7 +37,8 @@
             this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
             this.buttonBetolt = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxkNevSzuro = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCategory)).BeginInit();
             this.SuspendLayout();
@@ -46,7 +47,7 @@
             // 
             this.dataGridViewUser.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridViewUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewUser.Location = new System.Drawing.Point(160, 12);
+            this.dataGridViewUser.Location = new System.Drawing.Point(160, 75);
             this.dataGridViewUser.Name = "dataGridViewUser";
             this.dataGridViewUser.Size = new System.Drawing.Size(898, 551);
             this.dataGridViewUser.TabIndex = 15;
@@ -73,14 +74,14 @@
             this.dataGridViewCategory.BackgroundColor = System.Drawing.SystemColors.WindowText;
             this.dataGridViewCategory.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewCategory.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCategory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewCategory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCategory.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridViewCategory.Location = new System.Drawing.Point(12, 12);
@@ -144,13 +145,24 @@
             this.buttonBetolt.UseVisualStyleBackColor = false;
             this.buttonBetolt.Click += new System.EventHandler(this.buttonBetolt_Click);
             // 
-            // textBox1
+            // textBoxkNevSzuro
             // 
-            this.textBox1.Location = new System.Drawing.Point(160, 569);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 18;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBoxkNevSzuro.Location = new System.Drawing.Point(349, 632);
+            this.textBoxkNevSzuro.Name = "textBoxkNevSzuro";
+            this.textBoxkNevSzuro.Size = new System.Drawing.Size(100, 20);
+            this.textBoxkNevSzuro.TabIndex = 18;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Cambria", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(405, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(338, 43);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Felhasználó kezelő";
             // 
             // Felhasznalok
             // 
@@ -159,7 +171,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBoxkNevSzuro);
             this.Controls.Add(this.buttonBetolt);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.dataGridViewUser);
@@ -189,6 +202,7 @@
         private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Button buttonBetolt;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxkNevSzuro;
+        private System.Windows.Forms.Label label1;
     }
 }

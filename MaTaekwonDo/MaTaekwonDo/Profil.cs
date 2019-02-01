@@ -16,6 +16,7 @@ namespace MaTaekwonDo
         private DataTable users;
         private DataTable esemenyLista;
         Adatbazis a = new Adatbazis();
+        Bejelentkezes b = new Bejelentkezes();
 
         public Profil()
         {
