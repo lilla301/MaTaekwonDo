@@ -47,6 +47,20 @@ namespace MaTaekwonDo
             dataGridViewUser.Columns[1].Width = 20;
             dataGridViewUser.AllowUserToDeleteRows = false;
             dataGridViewUser.ReadOnly = false;
+
+            //dataGridViewUser.Columns["szemelyID"].Visible = true;
+            //dataGridViewUser.Columns["categoryID"].Visible = false;
+            //dataGridViewUser.Columns["klub"].Visible = false;
+            dataGridViewUser.Columns["categoryID"].HeaderText = "Felhasználói szint";
+            dataGridViewUser.Columns["szemelyID"].HeaderText = "ID";
+            dataGridViewUser.Columns["felhasznalonev"].HeaderText = "Felhasználónév";
+            dataGridViewUser.Columns["jelszo"].HeaderText = "Jelszó";
+            dataGridViewUser.Columns["vezeteknev"].HeaderText = "Vezetéknév";
+            dataGridViewUser.Columns["keresztnev"].HeaderText = "Keresztnév";
+            dataGridViewUser.Columns["email"].HeaderText = "Email";
+            dataGridViewUser.Columns["neme"].HeaderText = "Férfi";
+            //dataGridViewUser.Columns["ovfokozat"].Visible = false;
+            modositottE = false;
         }
 
         private void buttonExit_Click(object sender, EventArgs e)

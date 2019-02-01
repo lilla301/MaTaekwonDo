@@ -14,12 +14,12 @@ namespace MaTaekwonDo
     {
         private MySQLDataInterface mdi;
         private DataTable users;
-        private DataTable klubDT;
-        private DataGridViewComboBoxColumn ComboBoxKlub;
+        private DataTable esemenyLista;
         Adatbazis a = new Adatbazis();
 
         public Profil()
         {
+
             InitializeComponent();
         }
 
@@ -27,48 +27,33 @@ namespace MaTaekwonDo
         {
             mdi = a.kapcsolodas();
             mdi.open();
-            users = mdi.getToDataTable("SELECT vezeteknev, keresztnev, klub FROM user");
+            users = mdi.getToDataTable("SELECT vezeteknev, keresztnev, nev FROM user, klub WHERE klub.ID = user.klub");
             dataGridViewUsers.DataSource = users;
             dataGridViewUsers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewUsers.Columns[0].Width = 70;
             dataGridViewUsers.Columns[1].Width = 70;
             dataGridViewUsers.Columns[2].Width = 70;
-            dataGridViewUsers.Columns["klub"].Visible = false;
             dataGridViewUsers.ReadOnly = true;
+            dataGridViewUsers.Columns["nev"].HeaderText = "Klub";
+            dataGridViewUsers.Columns["vezeteknev"].HeaderText = "Vezetéknév";
+            dataGridViewUsers.Columns["keresztnev"].HeaderText = "Keresztnév";
 
-
-            if (ComboBoxKlub == null)
-            {
-                ComboBoxKlub = new DataGridViewComboBoxColumn();
-                ComboBoxKlub.HeaderText = "Klub";
-                ComboBoxKlub.Name = "KlubCombo";
-
-                MySQLDataInterface mdiKlub;
-                mdiKlub = a.kapcsolodas();
-                mdiKlub.open();
-                klubDT = new DataTable();
-                klubDT = mdiKlub.getToDataTable("SELECT id,nev FROM klub");
-                mdiKlub.close();
-                ComboBoxKlub.DataSource = klubDT;
-
-                ComboBoxKlub.ValueMember = "id";
-                ComboBoxKlub.DisplayMember = "nev";
-
-
-                dataGridViewUsers.Columns.Add(ComboBoxKlub);
-                setKlubComboValue();
-            }
-        }
-        private void setKlubComboValue()
-        {
-            for (int i = 0; i < dataGridViewUsers.Rows.Count - 1; i++)
-            {
-                dataGridViewUsers.Rows[i].Cells["KlubCombo"].Value = klubDT.Rows[i]["id"];
-            }
+            /*esemenyLista = mdi.getToDataTable("SELECT FROM esemenyek");
+            dataGridViewEsemenyek.DataSource = esemenyLista;
+            dataGridViewEsemenyek.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewEsemenyek.Columns["ido"].HeaderText = "Időpont";
+            dataGridViewEsemenyek.Columns["leiras"].HeaderText = "Leírás";*/
         }
         private void buttonExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void buttonVissza_Click(object sender, EventArgs e)
+        {
+            //Index i = new Index();
+            //i.Show();
+            //this.Close();
         }
     }
 }
