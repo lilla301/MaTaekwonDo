@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MaTaekwonDo
+namespace MaTaekwonDo.Model
 {
-    public class Adatok
+    partial class Adatok
     {
         List<Adatok> adat;
         int categoryID;
@@ -153,6 +153,19 @@ namespace MaTaekwonDo
             return "Felhasználói szint: " + categoryID + ", személy azonosítója: " + szemelyID + ", felhasználónév: " + fnev + ", jelszó: " + pwd +
                 ",vezetéknév: " + Vnev + ", keresztnév: " + Knev + ", email cím: " + email + ", neme: " + fiu + ", klub: " + klub + ", övfokozat: " + ovfok;
         }
+       /* public void setAdat(Adatok modositAdat)
+        {
+            this.categoryID = modositAdat.categoryID;
+            this.szemelyID = modositAdat.szemelyID;
+            this.fnev = modositAdat.fnev;
+            this.Vnev = modositAdat.Vnev;
+            this.Knev = modositAdat.Knev;
+            this.pwd = modositAdat.pwd;
+            this.email = modositAdat.email;
+            this.fiu = modositAdat.fiu;
+            this.klub = modositAdat.klub;
+            this.ovfok = modositAdat.ovfok;
+        }*/
 
     }
 }

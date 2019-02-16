@@ -47,8 +47,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Adatbazis.cs" />
-    <Compile Include="Adatok.cs" />
+    <Compile Include="DataBase\Adatbazis.cs" />
+    <Compile Include="konyv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="konyv.Designer.cs">
+      <DependentUpon>konyv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Adatok.cs" />
     <Compile Include="Bejelentkezes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,7 +73,9 @@
     <Compile Include="Index.Designer.cs">
       <DependentUpon>Index.cs</DependentUpon>
     </Compile>
-    <Compile Include="MySQLDataInterface.cs" />
+    <Compile Include="Model\AdatokMySQLCommands.cs" />
+    <Compile Include="DataBase\MySQLDataInterface.cs" />
+    <Compile Include="Model\formagyakorlat.cs" />
     <Compile Include="Profil.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +84,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tartalom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tartalom.Designer.cs">
+      <DependentUpon>tartalom.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Bejelentkezes.resx">
       <DependentUpon>Bejelentkezes.cs</DependentUpon>
     </EmbeddedResource>
@@ -84,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Index.resx">
       <DependentUpon>Index.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="konyv.resx">
+      <DependentUpon>konyv.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Profil.resx">
       <DependentUpon>Profil.cs</DependentUpon>
@@ -97,6 +114,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="tartalom.resx">
+      <DependentUpon>tartalom.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -109,6 +129,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Repository\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

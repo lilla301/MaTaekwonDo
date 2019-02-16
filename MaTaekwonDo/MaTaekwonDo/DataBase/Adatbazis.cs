@@ -19,5 +19,16 @@ namespace MaTaekwonDo
 
             return mdi;
         }
+        public MySQLDataInterface connectToDic()
+        {
+            MySQLDataInterface mdi = new MySQLDataInterface();
+            mdi.setErrorToUserInterface(true);
+            mdi.setErrorToGraphicalUserInterface(false);
+            mdi.setKapcsolodasSzerverAdatok("localhost", "nagykonyv", "3306");
+            mdi.setKapcsolodasFelhasznaloiAdatok("root", "");
+            mdi.kapcsolodasAdatBazishoz();
+
+            return mdi;
+        }
     }
 }

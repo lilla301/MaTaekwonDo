@@ -94,5 +94,12 @@ namespace MaTaekwonDo
             fh.Show();
             this.Hide();
         }
+
+        private void buttonDig_Click(object sender, EventArgs e)
+        {
+            konyv k = new konyv();
+            k.Show();
+            this.Hide();
+        }
     }
 }

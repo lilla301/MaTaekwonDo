@@ -146,6 +146,7 @@
             this.buttonDig.Size = new System.Drawing.Size(191, 173);
             this.buttonDig.TabIndex = 11;
             this.buttonDig.UseVisualStyleBackColor = false;
+            this.buttonDig.Click += new System.EventHandler(this.buttonDig_Click);
             // 
             // buttonLicense
             // 
