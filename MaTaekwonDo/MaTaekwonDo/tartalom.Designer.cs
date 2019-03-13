@@ -34,11 +34,8 @@
             this.buttonVissza = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageAjanlo = new System.Windows.Forms.TabPage();
-            this.buttonMentes = new System.Windows.Forms.Button();
-            this.buttonSzerkeszt = new System.Windows.Forms.Button();
             this.textBoxAjanlo = new System.Windows.Forms.TextBox();
             this.tabPageBevezeto = new System.Windows.Forms.TabPage();
-            this.buttonSzerk = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPagetortenet = new System.Windows.Forms.TabPage();
             this.tabPagematortenet = new System.Windows.Forms.TabPage();
@@ -95,6 +92,7 @@
             this.buttonExit.Size = new System.Drawing.Size(33, 30);
             this.buttonExit.TabIndex = 6;
             this.buttonExit.UseVisualStyleBackColor = false;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // buttonVissza
             // 
@@ -109,6 +107,7 @@
             this.buttonVissza.TabIndex = 5;
             this.buttonVissza.Text = "Vissza";
             this.buttonVissza.UseVisualStyleBackColor = false;
+            this.buttonVissza.Click += new System.EventHandler(this.buttonVissza_Click_1);
             // 
             // tabControl1
             // 
@@ -150,8 +149,6 @@
             this.tabPageAjanlo.BackColor = System.Drawing.Color.LightGray;
             this.tabPageAjanlo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.tabPageAjanlo.Controls.Add(pictureBox1);
-            this.tabPageAjanlo.Controls.Add(this.buttonMentes);
-            this.tabPageAjanlo.Controls.Add(this.buttonSzerkeszt);
             this.tabPageAjanlo.Controls.Add(this.textBoxAjanlo);
             this.tabPageAjanlo.Font = new System.Drawing.Font("News706 BT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPageAjanlo.Location = new System.Drawing.Point(4, 28);
@@ -162,30 +159,6 @@
             this.tabPageAjanlo.Text = "Ajánló";
             this.tabPageAjanlo.ToolTipText = "Ajánló";
             // 
-            // buttonMentes
-            // 
-            this.buttonMentes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            this.buttonMentes.Font = new System.Drawing.Font("News706 BT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonMentes.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonMentes.Location = new System.Drawing.Point(1059, 408);
-            this.buttonMentes.Name = "buttonMentes";
-            this.buttonMentes.Size = new System.Drawing.Size(144, 48);
-            this.buttonMentes.TabIndex = 1;
-            this.buttonMentes.Text = "Mentés";
-            this.buttonMentes.UseVisualStyleBackColor = false;
-            // 
-            // buttonSzerkeszt
-            // 
-            this.buttonSzerkeszt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            this.buttonSzerkeszt.Font = new System.Drawing.Font("News706 BT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSzerkeszt.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonSzerkeszt.Location = new System.Drawing.Point(1059, 6);
-            this.buttonSzerkeszt.Name = "buttonSzerkeszt";
-            this.buttonSzerkeszt.Size = new System.Drawing.Size(144, 48);
-            this.buttonSzerkeszt.TabIndex = 1;
-            this.buttonSzerkeszt.Text = "Szerkesztés";
-            this.buttonSzerkeszt.UseVisualStyleBackColor = false;
-            // 
             // textBoxAjanlo
             // 
             this.textBoxAjanlo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -195,13 +168,12 @@
             this.textBoxAjanlo.ReadOnly = true;
             this.textBoxAjanlo.Size = new System.Drawing.Size(1039, 598);
             this.textBoxAjanlo.TabIndex = 0;
-            this.textBoxAjanlo.Text = "\r\n";
+            this.textBoxAjanlo.Text = resources.GetString("textBoxAjanlo.Text");
             this.textBoxAjanlo.TextChanged += new System.EventHandler(this.textBoxAjanlo_TextChanged);
             // 
             // tabPageBevezeto
             // 
             this.tabPageBevezeto.BackColor = System.Drawing.Color.LightGray;
-            this.tabPageBevezeto.Controls.Add(this.buttonSzerk);
             this.tabPageBevezeto.Controls.Add(this.textBox1);
             this.tabPageBevezeto.Font = new System.Drawing.Font("News706 BT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPageBevezeto.Location = new System.Drawing.Point(4, 28);
@@ -211,17 +183,6 @@
             this.tabPageBevezeto.TabIndex = 1;
             this.tabPageBevezeto.Text = "Bevezető";
             // 
-            // buttonSzerk
-            // 
-            this.buttonSzerk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            this.buttonSzerk.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonSzerk.Location = new System.Drawing.Point(852, 3);
-            this.buttonSzerk.Name = "buttonSzerk";
-            this.buttonSzerk.Size = new System.Drawing.Size(134, 35);
-            this.buttonSzerk.TabIndex = 1;
-            this.buttonSzerk.Text = "Szerkesztés";
-            this.buttonSzerk.UseVisualStyleBackColor = false;
-            // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -229,7 +190,7 @@
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(840, 457);
+            this.textBox1.Size = new System.Drawing.Size(1093, 565);
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = resources.GetString("textBox1.Text");
             // 
@@ -469,11 +430,8 @@
         private System.Windows.Forms.Button buttonVissza;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPageAjanlo;
-        private System.Windows.Forms.Button buttonMentes;
-        private System.Windows.Forms.Button buttonSzerkeszt;
         private System.Windows.Forms.TextBox textBoxAjanlo;
         private System.Windows.Forms.TabPage tabPageBevezeto;
-        private System.Windows.Forms.Button buttonSzerk;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TabPage tabPagetortenet;
         private System.Windows.Forms.TabPage tabPagematortenet;

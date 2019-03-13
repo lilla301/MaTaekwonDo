@@ -113,20 +113,27 @@ namespace MaTaekwonDo
 
         private void tartalom_Load(object sender, EventArgs e)
         {
-            buttonSzerkeszt.Enabled = false;
-            buttonSzerk.Enabled = false;
+            
         }
 
         private void textBoxAjanlo_TextChanged(object sender, EventArgs e)
         {
             textBoxAjanlo.ReadOnly = true;
-            mdi = a.connectToDic();
-            mdi.open();
-            string query = "SELECT * FROM szoveg WHERE id=1";
-            string res = mdi.executeScalarQuery(query);
-            textBoxAjanlo.Text = res.ToString();
+            
             
 
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void buttonVissza_Click_1(object sender, EventArgs e)
+        {
+            konyv k = new konyv();
+            k.Show();
+            this.Hide();
         }
     }
 }

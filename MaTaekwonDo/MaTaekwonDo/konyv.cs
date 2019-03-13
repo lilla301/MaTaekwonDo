@@ -151,30 +151,12 @@ namespace MaTaekwonDo
             t.megjelenitTab(0);
             this.Hide();
         }
-
-        private void buttonBev_Click(object sender, EventArgs e)
-        {
-            t = new tartalom();
-
-            t.Show();
-            t.megjelenitTab(1);
-            this.Hide();
-        }
         private void buttonMaTorten_Click(object sender, EventArgs e)
         {
             t = new tartalom();
 
             t.Show();
             t.megjelenitTab(3);
-            this.Hide();
-        }
-
-        private void buttonTortent_Click(object sender, EventArgs e)
-        {
-            t = new tartalom();
-
-            t.Show();
-            t.megjelenitTab(2);
             this.Hide();
         }
         private void buttonTan_Click(object sender, EventArgs e)
@@ -256,6 +238,20 @@ namespace MaTaekwonDo
             t.Show();
             t.megjelenitTab(1);
             this.Hide();
+        }
+
+        private void buttonBev_Click_1(object sender, EventArgs e)
+        {
+            t = new tartalom();
+
+            t.Show();
+            t.megjelenitTab(2);
+            this.Hide();
+        }
+
+        private void buttonTortent_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Jelenleg ez a tartalom még nincs kész, ezért nem is elérhető! Megértését köszönjük!");
         }
     }
 }

@@ -367,6 +367,7 @@
             this.buttonTortent.TabIndex = 0;
             this.buttonTortent.Text = "A Taekwon-do története";
             this.buttonTortent.UseVisualStyleBackColor = true;
+            this.buttonTortent.Click += new System.EventHandler(this.buttonTortent_Click);
             // 
             // buttonBev
             // 
@@ -378,6 +379,7 @@
             this.buttonBev.TabIndex = 0;
             this.buttonBev.Text = "Bevezető";
             this.buttonBev.UseVisualStyleBackColor = true;
+            this.buttonBev.Click += new System.EventHandler(this.buttonBev_Click_1);
             // 
             // buttonTan
             // 
