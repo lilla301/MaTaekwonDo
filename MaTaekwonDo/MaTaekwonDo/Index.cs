@@ -12,17 +12,21 @@ namespace MaTaekwonDo
 {
     public partial class Index : Form
     {
+        private string kerNev;
+        private int catId;
 
-        public Index(string role)
+        public Index(int catId,string kerNev)
         {
             InitializeComponent();
+            this.kerNev = kerNev;
+            this.catId = catId;
             buttonDig.Visible = false;
             buttonFelhKezelo.Visible = false;
             buttonLicense.Visible = false;
             buttonProfil.Visible = false;
 
             //buttonLogin.Visible = false;
-            if (role == "1")
+            if (catId == 1)
             {
                 label5.Text = "admin";
                 label6.Text = "Bejelentkezve, mint " + label5.Text;
@@ -33,7 +37,7 @@ namespace MaTaekwonDo
 
                 //buttonLogin.Visible = false;
             }
-            else if (role == "2")
+            else if (catId == 2)
             {
                 label5.Text = "nagymester";
                 label6.Text = "Bejelentkezve, mint " + label5.Text;
@@ -62,7 +66,13 @@ namespace MaTaekwonDo
 
         private void buttonWebOldal_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Jelenleg nem elérhető");
+            Browser b = new Browser();
+            this.Hide();
+            if (b.ShowDialog(this) == DialogResult.Cancel)
+            {
+                this.Show();
+                b.Dispose();
+            }
         }
 
         private void buttonLicense_Click(object sender, EventArgs e)
@@ -72,9 +82,13 @@ namespace MaTaekwonDo
 
         private void buttonProfil_Click(object sender, EventArgs e)
         {
-            Profil p = new Profil();
-            p.Show();
+            Profil profilDialog = new Profil(kerNev);
             this.Hide();
+            if (profilDialog.ShowDialog(this) == DialogResult.Cancel)
+            {
+                this.Show();
+                profilDialog.Dispose();
+            }
         }
 
         private void Index_Load(object sender, EventArgs e)
@@ -91,15 +105,23 @@ namespace MaTaekwonDo
         private void buttonFelhKezelo_Click(object sender, EventArgs e)
         {
             Felhasznalok fh = new Felhasznalok();
-            fh.Show();
             this.Hide();
+            if (fh.ShowDialog(this) == DialogResult.Cancel)
+            {
+                this.Show();
+                fh.Dispose();
+            }
         }
 
         private void buttonDig_Click(object sender, EventArgs e)
         {
-            konyv k = new konyv();
-            k.Show();
+            konyv k = new konyv(catId);
             this.Hide();
+            if (k.ShowDialog(this) == DialogResult.Cancel)
+            {
+                this.Show();
+                k.Dispose();
+            }
         }
     }
 }

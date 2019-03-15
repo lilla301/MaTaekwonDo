@@ -428,6 +428,7 @@
             this.buttonVissza.TabIndex = 12;
             this.buttonVissza.Text = "Vissza";
             this.buttonVissza.UseVisualStyleBackColor = false;
+            this.buttonVissza.Click += new System.EventHandler(this.buttonVissza_Click_1);
             // 
             // konyv
             // 

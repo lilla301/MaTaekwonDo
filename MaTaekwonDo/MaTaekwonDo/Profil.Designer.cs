@@ -39,6 +39,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsers)).BeginInit();
             this.groupBoxEvent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEsemenyek)).BeginInit();
@@ -81,6 +82,7 @@
             // buttonVissza
             // 
             this.buttonVissza.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.buttonVissza.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonVissza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonVissza.Font = new System.Drawing.Font("Cambria", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonVissza.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -162,13 +164,25 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Profil";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Cambria", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.Location = new System.Drawing.Point(567, 55);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 43);
+            this.label3.TabIndex = 12;
+            // 
             // Profil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonVissza);
             this.Controls.Add(this.groupBoxEvent);
@@ -202,5 +216,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
     }
 }

@@ -20,6 +20,7 @@ namespace MaTaekwonDo
         Adatbazis a = new Adatbazis();
         Adatok d = new Adatok();
         string knevSzuro = "keresztnev";
+        string vNevSzuro = "vezeteknev";
         public Felhasznalok()
         {
             InitializeComponent();
@@ -73,9 +74,13 @@ namespace MaTaekwonDo
             dataGridViewUser.Columns["nev1"].HeaderText = "Övfokozat";
         }
 
-        private void textBoxkNevSzuro_TextChanged(object sender, EventArgs e)
+        private void textBoxNevSzuro_KeyPress(object sender, KeyPressEventArgs e)
         {
-            user.DefaultView.RowFilter = string.Format("Convert([{0}],'System.String') Like '%{1}'", knevSzuro, textBoxkNevSzuro.Text);
+            user.DefaultView.RowFilter = string.Format("[{0}] LIKE '%{1}%'", knevSzuro, textBoxNevSzuro.Text);
+        }
+        private void textBoxVNev_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            user.DefaultView.RowFilter = string.Format("[{0}] LIKE '%{1}%'", vNevSzuro, textBoxVNev.Text);
         }
     }
 }

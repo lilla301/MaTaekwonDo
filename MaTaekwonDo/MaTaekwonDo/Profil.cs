@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,11 +18,14 @@ namespace MaTaekwonDo
         private DataTable esemenyLista;
         Adatbazis a = new Adatbazis();
         Bejelentkezes b = new Bejelentkezes();
+        private string kerNev;
 
-        public Profil()
+        public Profil(string kerNev)
         {
 
             InitializeComponent();
+            this.kerNev = kerNev;
+            label2.Text = kerNev;
         }
 
         private void Profil_Load(object sender, EventArgs e)
@@ -52,9 +56,7 @@ namespace MaTaekwonDo
 
         private void buttonVissza_Click(object sender, EventArgs e)
         {
-            //Index i = new Index();
-            //i.Show();
-            //this.Close();
+            this.Hide();
         }
     }
 }

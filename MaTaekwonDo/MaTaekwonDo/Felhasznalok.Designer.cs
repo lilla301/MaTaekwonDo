@@ -37,8 +37,12 @@
             this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
             this.buttonBetolt = new System.Windows.Forms.Button();
-            this.textBoxkNevSzuro = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.buttonVissza = new System.Windows.Forms.Button();
+            this.textBoxNevSzuro = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxVNev = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCategory)).BeginInit();
             this.SuspendLayout();
@@ -145,13 +149,6 @@
             this.buttonBetolt.UseVisualStyleBackColor = false;
             this.buttonBetolt.Click += new System.EventHandler(this.buttonBetolt_Click);
             // 
-            // textBoxkNevSzuro
-            // 
-            this.textBoxkNevSzuro.Location = new System.Drawing.Point(349, 632);
-            this.textBoxkNevSzuro.Name = "textBoxkNevSzuro";
-            this.textBoxkNevSzuro.Size = new System.Drawing.Size(100, 20);
-            this.textBoxkNevSzuro.TabIndex = 18;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -164,6 +161,60 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "Felhasználó kezelő";
             // 
+            // buttonVissza
+            // 
+            this.buttonVissza.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.buttonVissza.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.buttonVissza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonVissza.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonVissza.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonVissza.Location = new System.Drawing.Point(12, 621);
+            this.buttonVissza.Name = "buttonVissza";
+            this.buttonVissza.Size = new System.Drawing.Size(122, 48);
+            this.buttonVissza.TabIndex = 20;
+            this.buttonVissza.Text = "Vissza";
+            this.buttonVissza.UseVisualStyleBackColor = false;
+            // 
+            // textBoxNevSzuro
+            // 
+            this.textBoxNevSzuro.Location = new System.Drawing.Point(1069, 98);
+            this.textBoxNevSzuro.Name = "textBoxNevSzuro";
+            this.textBoxNevSzuro.Size = new System.Drawing.Size(130, 20);
+            this.textBoxNevSzuro.TabIndex = 21;
+            this.textBoxNevSzuro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNevSzuro_KeyPress);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(1064, 70);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(121, 25);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "Keresztnév";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.Location = new System.Drawing.Point(1064, 121);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(121, 25);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "Vezetéknév";
+            // 
+            // textBoxVNev
+            // 
+            this.textBoxVNev.Location = new System.Drawing.Point(1069, 149);
+            this.textBoxVNev.Name = "textBoxVNev";
+            this.textBoxVNev.Size = new System.Drawing.Size(130, 20);
+            this.textBoxVNev.TabIndex = 24;
+            this.textBoxVNev.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxVNev_KeyPress);
+            // 
             // Felhasznalok
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -171,8 +222,12 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.textBoxVNev);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBoxNevSzuro);
+            this.Controls.Add(this.buttonVissza);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBoxkNevSzuro);
             this.Controls.Add(this.buttonBetolt);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.dataGridViewUser);
@@ -202,7 +257,11 @@
         private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Button buttonBetolt;
-        private System.Windows.Forms.TextBox textBoxkNevSzuro;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonVissza;
+        private System.Windows.Forms.TextBox textBoxNevSzuro;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBoxVNev;
     }
 }

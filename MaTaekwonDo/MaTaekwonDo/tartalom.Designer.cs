@@ -34,6 +34,7 @@
             this.buttonVissza = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageAjanlo = new System.Windows.Forms.TabPage();
+            this.buttonEdit = new System.Windows.Forms.Button();
             this.textBoxAjanlo = new System.Windows.Forms.TextBox();
             this.tabPageBevezeto = new System.Windows.Forms.TabPage();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -60,6 +61,7 @@
             this.tabPageOrv = new System.Windows.Forms.TabPage();
             this.tabPageSzotar = new System.Windows.Forms.TabPage();
             this.tabPageKepek = new System.Windows.Forms.TabPage();
+            this.buttonSave = new System.Windows.Forms.Button();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -98,8 +100,9 @@
             // 
             this.buttonVissza.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
             this.buttonVissza.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonVissza.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonVissza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonVissza.Font = new System.Drawing.Font("News706 BT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonVissza.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonVissza.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonVissza.Location = new System.Drawing.Point(12, 653);
             this.buttonVissza.Name = "buttonVissza";
@@ -136,7 +139,7 @@
             this.tabControl1.Controls.Add(this.tabPageOrv);
             this.tabControl1.Controls.Add(this.tabPageSzotar);
             this.tabControl1.Controls.Add(this.tabPageKepek);
-            this.tabControl1.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(12, 5);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -148,16 +151,33 @@
             this.tabPageAjanlo.AccessibleName = "Ajanlo";
             this.tabPageAjanlo.BackColor = System.Drawing.Color.LightGray;
             this.tabPageAjanlo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.tabPageAjanlo.Controls.Add(this.buttonSave);
+            this.tabPageAjanlo.Controls.Add(this.buttonEdit);
             this.tabPageAjanlo.Controls.Add(pictureBox1);
             this.tabPageAjanlo.Controls.Add(this.textBoxAjanlo);
-            this.tabPageAjanlo.Font = new System.Drawing.Font("News706 BT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPageAjanlo.Location = new System.Drawing.Point(4, 28);
+            this.tabPageAjanlo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPageAjanlo.Location = new System.Drawing.Point(4, 29);
             this.tabPageAjanlo.Name = "tabPageAjanlo";
             this.tabPageAjanlo.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAjanlo.Size = new System.Drawing.Size(1209, 610);
+            this.tabPageAjanlo.Size = new System.Drawing.Size(1209, 609);
             this.tabPageAjanlo.TabIndex = 0;
             this.tabPageAjanlo.Text = "Ajánló";
             this.tabPageAjanlo.ToolTipText = "Ajánló";
+            // 
+            // buttonEdit
+            // 
+            this.buttonEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.buttonEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEdit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonEdit.Location = new System.Drawing.Point(1059, 419);
+            this.buttonEdit.Name = "buttonEdit";
+            this.buttonEdit.Size = new System.Drawing.Size(132, 55);
+            this.buttonEdit.TabIndex = 7;
+            this.buttonEdit.Text = "Szerkesztés";
+            this.buttonEdit.UseVisualStyleBackColor = false;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // textBoxAjanlo
             // 
@@ -168,18 +188,17 @@
             this.textBoxAjanlo.ReadOnly = true;
             this.textBoxAjanlo.Size = new System.Drawing.Size(1039, 598);
             this.textBoxAjanlo.TabIndex = 0;
-            this.textBoxAjanlo.Text = resources.GetString("textBoxAjanlo.Text");
             this.textBoxAjanlo.TextChanged += new System.EventHandler(this.textBoxAjanlo_TextChanged);
             // 
             // tabPageBevezeto
             // 
             this.tabPageBevezeto.BackColor = System.Drawing.Color.LightGray;
             this.tabPageBevezeto.Controls.Add(this.textBox1);
-            this.tabPageBevezeto.Font = new System.Drawing.Font("News706 BT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPageBevezeto.Location = new System.Drawing.Point(4, 28);
+            this.tabPageBevezeto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPageBevezeto.Location = new System.Drawing.Point(4, 29);
             this.tabPageBevezeto.Name = "tabPageBevezeto";
             this.tabPageBevezeto.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageBevezeto.Size = new System.Drawing.Size(1209, 610);
+            this.tabPageBevezeto.Size = new System.Drawing.Size(1209, 609);
             this.tabPageBevezeto.TabIndex = 1;
             this.tabPageBevezeto.Text = "Bevezető";
             // 
@@ -196,210 +215,224 @@
             // 
             // tabPagetortenet
             // 
-            this.tabPagetortenet.Location = new System.Drawing.Point(4, 28);
+            this.tabPagetortenet.Location = new System.Drawing.Point(4, 29);
             this.tabPagetortenet.Name = "tabPagetortenet";
-            this.tabPagetortenet.Size = new System.Drawing.Size(1209, 610);
+            this.tabPagetortenet.Size = new System.Drawing.Size(1209, 609);
             this.tabPagetortenet.TabIndex = 2;
             this.tabPagetortenet.Text = "A Taekwon-do története";
             this.tabPagetortenet.UseVisualStyleBackColor = true;
             // 
             // tabPagematortenet
             // 
-            this.tabPagematortenet.Location = new System.Drawing.Point(4, 28);
+            this.tabPagematortenet.Location = new System.Drawing.Point(4, 29);
             this.tabPagematortenet.Name = "tabPagematortenet";
-            this.tabPagematortenet.Size = new System.Drawing.Size(1209, 610);
+            this.tabPagematortenet.Size = new System.Drawing.Size(1209, 609);
             this.tabPagematortenet.TabIndex = 3;
             this.tabPagematortenet.Text = "A Magyar Taekwon-do története";
             this.tabPagematortenet.UseVisualStyleBackColor = true;
             // 
             // tabPagetanai
             // 
-            this.tabPagetanai.Location = new System.Drawing.Point(4, 28);
+            this.tabPagetanai.Location = new System.Drawing.Point(4, 29);
             this.tabPagetanai.Name = "tabPagetanai";
-            this.tabPagetanai.Size = new System.Drawing.Size(1209, 610);
+            this.tabPagetanai.Size = new System.Drawing.Size(1209, 609);
             this.tabPagetanai.TabIndex = 4;
             this.tabPagetanai.Text = "A Taekwon-do tanai";
             this.tabPagetanai.UseVisualStyleBackColor = true;
             // 
             // tabPageeletpontok
             // 
-            this.tabPageeletpontok.Location = new System.Drawing.Point(4, 28);
+            this.tabPageeletpontok.Location = new System.Drawing.Point(4, 29);
             this.tabPageeletpontok.Name = "tabPageeletpontok";
-            this.tabPageeletpontok.Size = new System.Drawing.Size(1209, 610);
+            this.tabPageeletpontok.Size = new System.Drawing.Size(1209, 609);
             this.tabPageeletpontok.TabIndex = 5;
             this.tabPageeletpontok.Text = "Életpontok";
             this.tabPageeletpontok.UseVisualStyleBackColor = true;
             // 
             // tabPageMozgasanyag
             // 
-            this.tabPageMozgasanyag.Location = new System.Drawing.Point(4, 28);
+            this.tabPageMozgasanyag.Location = new System.Drawing.Point(4, 29);
             this.tabPageMozgasanyag.Name = "tabPageMozgasanyag";
-            this.tabPageMozgasanyag.Size = new System.Drawing.Size(1209, 610);
+            this.tabPageMozgasanyag.Size = new System.Drawing.Size(1209, 609);
             this.tabPageMozgasanyag.TabIndex = 6;
             this.tabPageMozgasanyag.Text = "A Taekwon-do mozgásanyaga";
             this.tabPageMozgasanyag.UseVisualStyleBackColor = true;
             // 
             // tabPageBazis
             // 
-            this.tabPageBazis.Location = new System.Drawing.Point(4, 28);
+            this.tabPageBazis.Location = new System.Drawing.Point(4, 29);
             this.tabPageBazis.Name = "tabPageBazis";
-            this.tabPageBazis.Size = new System.Drawing.Size(1209, 610);
+            this.tabPageBazis.Size = new System.Drawing.Size(1209, 609);
             this.tabPageBazis.TabIndex = 7;
             this.tabPageBazis.Text = "Bázis, vagy alapgyakorlatok";
             this.tabPageBazis.UseVisualStyleBackColor = true;
             // 
             // tabPageEro
             // 
-            this.tabPageEro.Location = new System.Drawing.Point(4, 28);
+            this.tabPageEro.Location = new System.Drawing.Point(4, 29);
             this.tabPageEro.Name = "tabPageEro";
-            this.tabPageEro.Size = new System.Drawing.Size(1209, 610);
+            this.tabPageEro.Size = new System.Drawing.Size(1209, 609);
             this.tabPageEro.TabIndex = 8;
             this.tabPageEro.Text = "Erő és gyorsaság elmélete";
             this.tabPageEro.UseVisualStyleBackColor = true;
             // 
             // tabPageForma
             // 
-            this.tabPageForma.Location = new System.Drawing.Point(4, 28);
+            this.tabPageForma.Location = new System.Drawing.Point(4, 29);
             this.tabPageForma.Name = "tabPageForma";
-            this.tabPageForma.Size = new System.Drawing.Size(1209, 610);
+            this.tabPageForma.Size = new System.Drawing.Size(1209, 609);
             this.tabPageForma.TabIndex = 9;
             this.tabPageForma.Text = "Formagyakorlat";
             this.tabPageForma.UseVisualStyleBackColor = true;
             // 
             // tabPageFormaSzab
             // 
-            this.tabPageFormaSzab.Location = new System.Drawing.Point(4, 28);
+            this.tabPageFormaSzab.Location = new System.Drawing.Point(4, 29);
             this.tabPageFormaSzab.Name = "tabPageFormaSzab";
-            this.tabPageFormaSzab.Size = new System.Drawing.Size(1209, 610);
+            this.tabPageFormaSzab.Size = new System.Drawing.Size(1209, 609);
             this.tabPageFormaSzab.TabIndex = 10;
             this.tabPageFormaSzab.Text = "A formagyakorlat versenyszabályai";
             this.tabPageFormaSzab.UseVisualStyleBackColor = true;
             // 
             // tabPageFoKuzdelem
             // 
-            this.tabPageFoKuzdelem.Location = new System.Drawing.Point(4, 28);
+            this.tabPageFoKuzdelem.Location = new System.Drawing.Point(4, 29);
             this.tabPageFoKuzdelem.Name = "tabPageFoKuzdelem";
-            this.tabPageFoKuzdelem.Size = new System.Drawing.Size(1209, 610);
+            this.tabPageFoKuzdelem.Size = new System.Drawing.Size(1209, 609);
             this.tabPageFoKuzdelem.TabIndex = 11;
             this.tabPageFoKuzdelem.Text = "Formai Küzdelem";
             this.tabPageFoKuzdelem.UseVisualStyleBackColor = true;
             // 
             // tabPageOnvedelem
             // 
-            this.tabPageOnvedelem.Location = new System.Drawing.Point(4, 28);
+            this.tabPageOnvedelem.Location = new System.Drawing.Point(4, 29);
             this.tabPageOnvedelem.Name = "tabPageOnvedelem";
-            this.tabPageOnvedelem.Size = new System.Drawing.Size(1209, 610);
+            this.tabPageOnvedelem.Size = new System.Drawing.Size(1209, 609);
             this.tabPageOnvedelem.TabIndex = 12;
             this.tabPageOnvedelem.Text = "Önvédelmi technikák";
             this.tabPageOnvedelem.UseVisualStyleBackColor = true;
             // 
             // tabPageTores
             // 
-            this.tabPageTores.Location = new System.Drawing.Point(4, 28);
+            this.tabPageTores.Location = new System.Drawing.Point(4, 29);
             this.tabPageTores.Name = "tabPageTores";
-            this.tabPageTores.Size = new System.Drawing.Size(1209, 610);
+            this.tabPageTores.Size = new System.Drawing.Size(1209, 609);
             this.tabPageTores.TabIndex = 13;
             this.tabPageTores.Text = "Töréstechnika";
             this.tabPageTores.UseVisualStyleBackColor = true;
             // 
             // tabPageToresSzab
             // 
-            this.tabPageToresSzab.Location = new System.Drawing.Point(4, 28);
+            this.tabPageToresSzab.Location = new System.Drawing.Point(4, 29);
             this.tabPageToresSzab.Name = "tabPageToresSzab";
-            this.tabPageToresSzab.Size = new System.Drawing.Size(1209, 610);
+            this.tabPageToresSzab.Size = new System.Drawing.Size(1209, 609);
             this.tabPageToresSzab.TabIndex = 14;
             this.tabPageToresSzab.Text = "A töréstechnika versenyszabályai";
             this.tabPageToresSzab.UseVisualStyleBackColor = true;
             // 
             // tabPageKuzdelem
             // 
-            this.tabPageKuzdelem.Location = new System.Drawing.Point(4, 28);
+            this.tabPageKuzdelem.Location = new System.Drawing.Point(4, 29);
             this.tabPageKuzdelem.Name = "tabPageKuzdelem";
-            this.tabPageKuzdelem.Size = new System.Drawing.Size(1209, 610);
+            this.tabPageKuzdelem.Size = new System.Drawing.Size(1209, 609);
             this.tabPageKuzdelem.TabIndex = 15;
             this.tabPageKuzdelem.Text = "Szabad Küzdelem";
             this.tabPageKuzdelem.UseVisualStyleBackColor = true;
             // 
             // tabPageKuzSzab
             // 
-            this.tabPageKuzSzab.Location = new System.Drawing.Point(4, 28);
+            this.tabPageKuzSzab.Location = new System.Drawing.Point(4, 29);
             this.tabPageKuzSzab.Name = "tabPageKuzSzab";
-            this.tabPageKuzSzab.Size = new System.Drawing.Size(1209, 610);
+            this.tabPageKuzSzab.Size = new System.Drawing.Size(1209, 609);
             this.tabPageKuzSzab.TabIndex = 16;
             this.tabPageKuzSzab.Text = "A küzdelem versenyszabályai";
             this.tabPageKuzSzab.UseVisualStyleBackColor = true;
             // 
             // tabPageVersenyTaktika
             // 
-            this.tabPageVersenyTaktika.Location = new System.Drawing.Point(4, 28);
+            this.tabPageVersenyTaktika.Location = new System.Drawing.Point(4, 29);
             this.tabPageVersenyTaktika.Name = "tabPageVersenyTaktika";
-            this.tabPageVersenyTaktika.Size = new System.Drawing.Size(1209, 610);
+            this.tabPageVersenyTaktika.Size = new System.Drawing.Size(1209, 609);
             this.tabPageVersenyTaktika.TabIndex = 17;
             this.tabPageVersenyTaktika.Text = "Versenytaktika";
             this.tabPageVersenyTaktika.UseVisualStyleBackColor = true;
             // 
             // tabPageSpecFejl
             // 
-            this.tabPageSpecFejl.Location = new System.Drawing.Point(4, 28);
+            this.tabPageSpecFejl.Location = new System.Drawing.Point(4, 29);
             this.tabPageSpecFejl.Name = "tabPageSpecFejl";
-            this.tabPageSpecFejl.Size = new System.Drawing.Size(1209, 610);
+            this.tabPageSpecFejl.Size = new System.Drawing.Size(1209, 609);
             this.tabPageSpecFejl.TabIndex = 18;
             this.tabPageSpecFejl.Text = "Speciális képességfejlesztés";
             this.tabPageSpecFejl.UseVisualStyleBackColor = true;
             // 
             // tabPageEdzoterem
             // 
-            this.tabPageEdzoterem.Location = new System.Drawing.Point(4, 28);
+            this.tabPageEdzoterem.Location = new System.Drawing.Point(4, 29);
             this.tabPageEdzoterem.Name = "tabPageEdzoterem";
-            this.tabPageEdzoterem.Size = new System.Drawing.Size(1209, 610);
+            this.tabPageEdzoterem.Size = new System.Drawing.Size(1209, 609);
             this.tabPageEdzoterem.TabIndex = 19;
             this.tabPageEdzoterem.Text = "Edzőterem";
             this.tabPageEdzoterem.UseVisualStyleBackColor = true;
             // 
             // tabPageOvRend
             // 
-            this.tabPageOvRend.Location = new System.Drawing.Point(4, 28);
+            this.tabPageOvRend.Location = new System.Drawing.Point(4, 29);
             this.tabPageOvRend.Name = "tabPageOvRend";
-            this.tabPageOvRend.Size = new System.Drawing.Size(1209, 610);
+            this.tabPageOvRend.Size = new System.Drawing.Size(1209, 609);
             this.tabPageOvRend.TabIndex = 20;
             this.tabPageOvRend.Text = "Az övfokozatok Rendje";
             this.tabPageOvRend.UseVisualStyleBackColor = true;
             // 
             // tabPageVizsgaany
             // 
-            this.tabPageVizsgaany.Location = new System.Drawing.Point(4, 28);
+            this.tabPageVizsgaany.Location = new System.Drawing.Point(4, 29);
             this.tabPageVizsgaany.Name = "tabPageVizsgaany";
-            this.tabPageVizsgaany.Size = new System.Drawing.Size(1209, 610);
+            this.tabPageVizsgaany.Size = new System.Drawing.Size(1209, 609);
             this.tabPageVizsgaany.TabIndex = 21;
             this.tabPageVizsgaany.Text = "Részletes Vizsgaanyag";
             this.tabPageVizsgaany.UseVisualStyleBackColor = true;
             // 
             // tabPageOrv
             // 
-            this.tabPageOrv.Location = new System.Drawing.Point(4, 28);
+            this.tabPageOrv.Location = new System.Drawing.Point(4, 29);
             this.tabPageOrv.Name = "tabPageOrv";
-            this.tabPageOrv.Size = new System.Drawing.Size(1209, 610);
+            this.tabPageOrv.Size = new System.Drawing.Size(1209, 609);
             this.tabPageOrv.TabIndex = 22;
             this.tabPageOrv.Text = "Orvosi jegyzetek";
             this.tabPageOrv.UseVisualStyleBackColor = true;
             // 
             // tabPageSzotar
             // 
-            this.tabPageSzotar.Location = new System.Drawing.Point(4, 28);
+            this.tabPageSzotar.Location = new System.Drawing.Point(4, 29);
             this.tabPageSzotar.Name = "tabPageSzotar";
-            this.tabPageSzotar.Size = new System.Drawing.Size(1209, 610);
+            this.tabPageSzotar.Size = new System.Drawing.Size(1209, 609);
             this.tabPageSzotar.TabIndex = 23;
             this.tabPageSzotar.Text = "Koreai szakszótár";
             this.tabPageSzotar.UseVisualStyleBackColor = true;
             // 
             // tabPageKepek
             // 
-            this.tabPageKepek.Location = new System.Drawing.Point(4, 28);
+            this.tabPageKepek.Location = new System.Drawing.Point(4, 29);
             this.tabPageKepek.Name = "tabPageKepek";
-            this.tabPageKepek.Size = new System.Drawing.Size(1209, 610);
+            this.tabPageKepek.Size = new System.Drawing.Size(1209, 609);
             this.tabPageKepek.TabIndex = 24;
             this.tabPageKepek.Text = "Képmelléklet";
             this.tabPageKepek.UseVisualStyleBackColor = true;
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.buttonSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSave.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonSave.Location = new System.Drawing.Point(1059, 480);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(132, 55);
+            this.buttonSave.TabIndex = 8;
+            this.buttonSave.Text = "Mentés";
+            this.buttonSave.UseVisualStyleBackColor = false;
             // 
             // tartalom
             // 
@@ -413,6 +446,7 @@
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "tartalom";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "tartalom";
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
             this.tabControl1.ResumeLayout(false);
@@ -456,5 +490,7 @@
         private System.Windows.Forms.TabPage tabPageOrv;
         private System.Windows.Forms.TabPage tabPageSzotar;
         private System.Windows.Forms.TabPage tabPageKepek;
+        private System.Windows.Forms.Button buttonEdit;
+        private System.Windows.Forms.Button buttonSave;
     }
 }

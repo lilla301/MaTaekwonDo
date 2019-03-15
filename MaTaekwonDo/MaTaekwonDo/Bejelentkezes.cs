@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace MaTaekwonDo
 {
     public partial class Bejelentkezes : Form
     {
+        private int catId;
+        private string kerNev;
         public Bejelentkezes()
         {
             InitializeComponent();   
@@ -25,28 +28,31 @@ namespace MaTaekwonDo
         { 
             string user = textBoxUname.Text;
             string pwd = textBoxPwd.Text;
+
+            int i;
+
             Adatbazis a = new Adatbazis();
             MySQLDataInterface mdi = a.kapcsolodas();
             mdi.open();
-            string query = "SELECT categoryID FROM user WHERE felhasznalonev= \"" + user + "\" and jelszo =\"" + pwd + "\"";
-            string result = mdi.executeScalarQuery(query);
-            if (result == "1")
-            {
-                
-                    Index i=new Index(result.ToString());
-                    i.Show();
-                    this.Hide();
+            string query = "select * from user where felhasznalonev='" + user + "' AND jelszo='"+pwd+"'";
+            DataTable dt = new DataTable();
+            dt = mdi.getToDataTable(query);
+            i = Convert.ToInt32(dt.Rows.Count.ToString());
 
-            }
-            else if (result == "2" || result=="3")
+            if (i == 0)
             {
-                Index i = new Index(result.ToString());
-                i.Show();
-                this.Hide();
+                MessageBox.Show("Nem található felhasználó ilyen felhasználónévvel.");
             }
             else
             {
-                MessageBox.Show("Hibás felhasználónév vagy jelszó", "Hiba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                foreach (DataRow row in dt.Rows)
+                {
+                    catId = Convert.ToInt32(row["categoryID"]);
+                    kerNev = row["keresztnev"].ToString();
+                }
+                Index index = new Index(catId,kerNev);
+                index.Show();
+                this.Hide();
             }
         }
 
