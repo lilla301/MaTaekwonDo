@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -26,6 +27,7 @@ namespace MaTaekwonDo
             this.catId = catId;
             buttonEdit.Enabled = false;
             textBoxAjanlo.ReadOnly = true;
+            buttonSave.Visible = false;
 
             if (catId == 1 || catId==2)
             {
@@ -137,17 +139,23 @@ namespace MaTaekwonDo
         {
             Application.Exit();
         }
-
-        private void buttonVissza_Click_1(object sender, EventArgs e)
-        {
-            /*konyv k = new konyv();
-            k.Show();
-            this.Hide();*/
-        }
-
         private void buttonEdit_Click(object sender, EventArgs e)
         {
             textBoxAjanlo.ReadOnly = false;
+            buttonSave.Visible = true;
+            buttonEdit.Enabled = false;
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            Adatbazis a = new Adatbazis();
+            MySQLDataInterface mdi = a.connectToDic();
+            mdi.open();
+            string query = "UPDATE szoveg SET szoveg='"+textBoxAjanlo.Text+"' where id=" + 1;
+            DataTable dt = new DataTable();
+            dt = mdi.getToDataTable(query);
+            mdi.frissitAdatokat(dt);
+
         }
     }
 }

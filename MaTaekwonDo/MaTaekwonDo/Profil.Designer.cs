@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Profil));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewUsers = new System.Windows.Forms.DataGridView();
-            this.buttonNext = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
             this.buttonVissza = new System.Windows.Forms.Button();
             this.groupBoxEvent = new System.Windows.Forms.GroupBox();
@@ -52,19 +52,6 @@
             this.dataGridViewUsers.Name = "dataGridViewUsers";
             this.dataGridViewUsers.Size = new System.Drawing.Size(240, 487);
             this.dataGridViewUsers.TabIndex = 0;
-            // 
-            // buttonNext
-            // 
-            this.buttonNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            this.buttonNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonNext.Font = new System.Drawing.Font("Cambria", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonNext.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonNext.Location = new System.Drawing.Point(1084, 611);
-            this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(168, 58);
-            this.buttonNext.TabIndex = 1;
-            this.buttonNext.Text = "Tovább";
-            this.buttonNext.UseVisualStyleBackColor = false;
             // 
             // buttonExit
             // 
@@ -102,19 +89,29 @@
             this.groupBoxEvent.Controls.Add(this.buttonAdd);
             this.groupBoxEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.groupBoxEvent.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBoxEvent.Location = new System.Drawing.Point(12, 118);
+            this.groupBoxEvent.Location = new System.Drawing.Point(12, 101);
             this.groupBoxEvent.Name = "groupBoxEvent";
-            this.groupBoxEvent.Size = new System.Drawing.Size(297, 487);
+            this.groupBoxEvent.Size = new System.Drawing.Size(973, 504);
             this.groupBoxEvent.TabIndex = 9;
             this.groupBoxEvent.TabStop = false;
             this.groupBoxEvent.Text = "Események";
             // 
             // dataGridViewEsemenyek
             // 
+            this.dataGridViewEsemenyek.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridViewEsemenyek.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewEsemenyek.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewEsemenyek.GridColor = System.Drawing.SystemColors.AppWorkspace;
             this.dataGridViewEsemenyek.Location = new System.Drawing.Point(6, 141);
             this.dataGridViewEsemenyek.Name = "dataGridViewEsemenyek";
-            this.dataGridViewEsemenyek.Size = new System.Drawing.Size(285, 276);
+            this.dataGridViewEsemenyek.Size = new System.Drawing.Size(956, 276);
             this.dataGridViewEsemenyek.TabIndex = 9;
             // 
             // buttonPrev
@@ -123,12 +120,13 @@
             this.buttonPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPrev.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonPrev.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonPrev.Location = new System.Drawing.Point(65, 423);
+            this.buttonPrev.Location = new System.Drawing.Point(445, 423);
             this.buttonPrev.Name = "buttonPrev";
             this.buttonPrev.Size = new System.Drawing.Size(168, 58);
             this.buttonPrev.TabIndex = 9;
             this.buttonPrev.Text = "Korábbi események";
             this.buttonPrev.UseVisualStyleBackColor = false;
+            this.buttonPrev.Click += new System.EventHandler(this.buttonPrev_Click);
             // 
             // label2
             // 
@@ -145,7 +143,7 @@
             this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAdd.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonAdd.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonAdd.Location = new System.Drawing.Point(65, 30);
+            this.buttonAdd.Location = new System.Drawing.Point(445, 30);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(168, 58);
             this.buttonAdd.TabIndex = 8;
@@ -187,7 +185,6 @@
             this.Controls.Add(this.buttonVissza);
             this.Controls.Add(this.groupBoxEvent);
             this.Controls.Add(this.buttonExit);
-            this.Controls.Add(this.buttonNext);
             this.Controls.Add(this.dataGridViewUsers);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -207,7 +204,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridViewUsers;
-        private System.Windows.Forms.Button buttonNext;
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Button buttonVissza;
         private System.Windows.Forms.GroupBox groupBoxEvent;

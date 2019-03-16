@@ -82,7 +82,7 @@ namespace MaTaekwonDo
 
         private void buttonProfil_Click(object sender, EventArgs e)
         {
-            Profil profilDialog = new Profil(kerNev);
+            Profil profilDialog = new Profil(kerNev,catId);
             this.Hide();
             if (profilDialog.ShowDialog(this) == DialogResult.Cancel)
             {

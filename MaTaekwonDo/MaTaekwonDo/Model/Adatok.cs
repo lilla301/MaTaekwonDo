@@ -16,11 +16,11 @@ namespace MaTaekwonDo.Model
         string Vnev;
         string pwd;
         string email;
-        bool fiu;
+        string fiu;
         int klub;
         int ovfok;
 
-        public Adatok(int categoryID, int szemelyID, string fnev, string pwd, string Vnev, string Knev, string email, bool fiu, int klub, int ovfok)
+        public Adatok(int categoryID, int szemelyID, string fnev, string pwd, string Vnev, string Knev, string email, string fiu, int klub, int ovfok)
         {
             this.categoryID = categoryID;
             this.szemelyID = szemelyID;
@@ -46,7 +46,7 @@ namespace MaTaekwonDo.Model
             this.Vnev = string.Empty;
             this.Knev = string.Empty;
             this.email = string.Empty;
-            this.fiu = false;
+            this.fiu = string.Empty;
             this.klub = 0;
             this.ovfok = 0;
         }
@@ -79,7 +79,7 @@ namespace MaTaekwonDo.Model
         {
             return email;
         }
-        public bool getFiu()
+        public string getFiu()
         {
             return fiu;
         }
@@ -121,7 +121,7 @@ namespace MaTaekwonDo.Model
         {
             this.email = email;
         }
-        public void setFiu(bool ferfi)
+        public void setFiu(string ferfi)
         {
             this.fiu = ferfi;
         }

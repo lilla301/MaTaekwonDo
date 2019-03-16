@@ -34,6 +34,7 @@
             this.buttonVissza = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageAjanlo = new System.Windows.Forms.TabPage();
+            this.buttonSave = new System.Windows.Forms.Button();
             this.buttonEdit = new System.Windows.Forms.Button();
             this.textBoxAjanlo = new System.Windows.Forms.TextBox();
             this.tabPageBevezeto = new System.Windows.Forms.TabPage();
@@ -61,7 +62,6 @@
             this.tabPageOrv = new System.Windows.Forms.TabPage();
             this.tabPageSzotar = new System.Windows.Forms.TabPage();
             this.tabPageKepek = new System.Windows.Forms.TabPage();
-            this.buttonSave = new System.Windows.Forms.Button();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -110,7 +110,6 @@
             this.buttonVissza.TabIndex = 5;
             this.buttonVissza.Text = "Vissza";
             this.buttonVissza.UseVisualStyleBackColor = false;
-            this.buttonVissza.Click += new System.EventHandler(this.buttonVissza_Click_1);
             // 
             // tabControl1
             // 
@@ -163,6 +162,21 @@
             this.tabPageAjanlo.TabIndex = 0;
             this.tabPageAjanlo.Text = "Ajánló";
             this.tabPageAjanlo.ToolTipText = "Ajánló";
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.buttonSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSave.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonSave.Location = new System.Drawing.Point(1059, 480);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(132, 55);
+            this.buttonSave.TabIndex = 8;
+            this.buttonSave.Text = "Mentés";
+            this.buttonSave.UseVisualStyleBackColor = false;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // buttonEdit
             // 
@@ -419,20 +433,6 @@
             this.tabPageKepek.TabIndex = 24;
             this.tabPageKepek.Text = "Képmelléklet";
             this.tabPageKepek.UseVisualStyleBackColor = true;
-            // 
-            // buttonSave
-            // 
-            this.buttonSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            this.buttonSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSave.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonSave.Location = new System.Drawing.Point(1059, 480);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(132, 55);
-            this.buttonSave.TabIndex = 8;
-            this.buttonSave.Text = "Mentés";
-            this.buttonSave.UseVisualStyleBackColor = false;
             // 
             // tartalom
             // 
