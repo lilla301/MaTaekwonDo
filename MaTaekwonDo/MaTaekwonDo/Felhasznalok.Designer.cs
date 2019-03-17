@@ -121,6 +121,7 @@
             this.buttonEdit.TabIndex = 13;
             this.buttonEdit.Text = "Módosít";
             this.buttonEdit.UseVisualStyleBackColor = false;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // buttonExit
             // 

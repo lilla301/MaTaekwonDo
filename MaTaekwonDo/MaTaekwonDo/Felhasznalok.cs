@@ -82,5 +82,33 @@ namespace MaTaekwonDo
         {
             user.DefaultView.RowFilter = string.Format("[{0}] LIKE '%{1}%'", vNevSzuro, textBoxVNev.Text);
         }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewUser.SelectedRows.Count>0 )
+            {
+                Adatok data = new Adatok();
+                Szerkeszt sz = new Szerkeszt(data);
+                if (sz.ShowDialog() == DialogResult.OK)
+                {
+                    data=sz.getAdat();
+                    //data.getCategoryId().ToString();
+                    //data.getEmail();
+                    //data.getFiu();
+                    data.getfnev();
+                    //data.getKlub();
+                    //data.getKnev();
+                    //data.getOvfok();
+                    //data.getPwd();
+                    //data.getSzemelyID().ToString();
+                    //data.getVnev();
+
+                    data.getBeillesztQuery();
+                }
+            }
+            
+
+
+        }
     }
 }

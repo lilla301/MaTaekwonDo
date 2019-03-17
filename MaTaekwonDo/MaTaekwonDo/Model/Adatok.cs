@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MaTaekwonDo.Model
 {
-    partial class Adatok
+    public partial class Adatok
     {
         List<Adatok> adat;
         int categoryID;

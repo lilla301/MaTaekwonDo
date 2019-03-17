@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaTaekwonDo.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,27 @@ namespace MaTaekwonDo
 {
     public partial class Szerkeszt : Form
     {
-        public Szerkeszt()
+        private Adatok a;
+        public Szerkeszt(Adatok a)
         {
+           
             InitializeComponent();
+            a = new Adatok();
+            this.a = a;
+            textBoxFnev.Text = a.getfnev();
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        public Adatok getAdat()
+        {
+            return a;
+        }
+        private void buttonKesz_Click(object sender, EventArgs e)
+        {
+            a.setFnev(textBoxFnev.Text);
         }
     }
 }
