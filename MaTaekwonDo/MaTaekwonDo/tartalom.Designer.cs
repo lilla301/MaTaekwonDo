@@ -61,12 +61,18 @@
             this.tabPageVizsgaany = new System.Windows.Forms.TabPage();
             this.tabPageOrv = new System.Windows.Forms.TabPage();
             this.tabPageSzotar = new System.Windows.Forms.TabPage();
+            this.dataGridViewForma = new System.Windows.Forms.DataGridView();
+            this.buttonLoad = new System.Windows.Forms.Button();
+            this.dataGridViewSzotar = new System.Windows.Forms.DataGridView();
             this.tabPageKepek = new System.Windows.Forms.TabPage();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPageAjanlo.SuspendLayout();
             this.tabPageBevezeto.SuspendLayout();
+            this.tabPageSzotar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewForma)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSzotar)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -418,12 +424,47 @@
             // 
             // tabPageSzotar
             // 
+            this.tabPageSzotar.Controls.Add(this.dataGridViewForma);
+            this.tabPageSzotar.Controls.Add(this.buttonLoad);
+            this.tabPageSzotar.Controls.Add(this.dataGridViewSzotar);
             this.tabPageSzotar.Location = new System.Drawing.Point(4, 29);
             this.tabPageSzotar.Name = "tabPageSzotar";
             this.tabPageSzotar.Size = new System.Drawing.Size(1209, 609);
             this.tabPageSzotar.TabIndex = 23;
             this.tabPageSzotar.Text = "Koreai szakszótár";
             this.tabPageSzotar.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewForma
+            // 
+            this.dataGridViewForma.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewForma.Location = new System.Drawing.Point(957, 317);
+            this.dataGridViewForma.Name = "dataGridViewForma";
+            this.dataGridViewForma.Size = new System.Drawing.Size(249, 289);
+            this.dataGridViewForma.TabIndex = 8;
+            // 
+            // buttonLoad
+            // 
+            this.buttonLoad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.buttonLoad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLoad.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonLoad.Location = new System.Drawing.Point(957, 3);
+            this.buttonLoad.Name = "buttonLoad";
+            this.buttonLoad.Size = new System.Drawing.Size(132, 55);
+            this.buttonLoad.TabIndex = 7;
+            this.buttonLoad.Text = "Betöltés";
+            this.buttonLoad.UseVisualStyleBackColor = false;
+            this.buttonLoad.Click += new System.EventHandler(this.buttonLoad_Click);
+            // 
+            // dataGridViewSzotar
+            // 
+            this.dataGridViewSzotar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSzotar.Location = new System.Drawing.Point(4, 3);
+            this.dataGridViewSzotar.Name = "dataGridViewSzotar";
+            this.dataGridViewSzotar.Size = new System.Drawing.Size(947, 603);
+            this.dataGridViewSzotar.TabIndex = 0;
+            this.dataGridViewSzotar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSzotar_CellClick);
             // 
             // tabPageKepek
             // 
@@ -445,15 +486,19 @@
             this.Controls.Add(this.buttonVissza);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "tartalom";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "tartalom";
+            this.Text = "MaTaekwonDo";
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPageAjanlo.ResumeLayout(false);
             this.tabPageAjanlo.PerformLayout();
             this.tabPageBevezeto.ResumeLayout(false);
             this.tabPageBevezeto.PerformLayout();
+            this.tabPageSzotar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewForma)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSzotar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -492,5 +537,8 @@
         private System.Windows.Forms.TabPage tabPageKepek;
         private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.Button buttonLoad;
+        private System.Windows.Forms.DataGridView dataGridViewSzotar;
+        private System.Windows.Forms.DataGridView dataGridViewForma;
     }
 }

@@ -264,5 +264,17 @@ namespace MaTaekwonDo
         {
             this.Hide();
         }
+
+        private void buttonSzotar_Click_1(object sender, EventArgs e)
+        {
+            t = new tartalom(catId);
+            t.megjelenitTab(24);
+            this.Hide();
+            if (t.ShowDialog(this) == DialogResult.Cancel)
+            {
+                this.Show();
+                t.Dispose();
+            }
+        }
     }
 }

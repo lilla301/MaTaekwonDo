@@ -18,7 +18,8 @@ namespace MaTaekwonDo
         private MySQLDataInterface mdi;
         Adatbazis a = new Adatbazis();
         private int catId;
-        private DataTable ajanlo;
+        private DataTable szotar;
+        private DataTable forma;
         private string szoveg;
         public tartalom(int catId)
         {
@@ -113,6 +114,10 @@ namespace MaTaekwonDo
             {
                 tabControl1.SelectTab("");
             }
+            if (v == 24)
+            {
+                tabControl1.SelectTab("tabPageSzotar");
+            }
             #endregion
         }
 
@@ -156,6 +161,40 @@ namespace MaTaekwonDo
             dt = mdi.getToDataTable(query);
             mdi.frissitAdatokat(dt);
 
+        }
+
+        private void buttonLoad_Click(object sender, EventArgs e)
+        {
+            betoltSzakszotart();
+        }
+        private void betoltSzakszotart()
+        {
+            Adatbazis a = new Adatbazis();
+            MySQLDataInterface mdi = a.connectToDic();
+            mdi.open();
+            szotar = mdi.getToDataTable("SELECT * FROM lepesek");
+            dataGridViewSzotar.DataSource = szotar;
+            dataGridViewSzotar.Columns[0].Width = 50;
+            dataGridViewSzotar.Columns[1].Width = 200;
+            dataGridViewSzotar.Columns[2].Width = 200;
+            dataGridViewSzotar.Columns[3].Width = 200;
+            dataGridViewSzotar.Columns[4].Width = 150;
+
+        }
+
+        private void dataGridViewSzotar_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Adatbazis a = new Adatbazis();
+            MySQLDataInterface mdi = a.connectToDic();
+            mdi.open();
+            
+            forma = mdi.getToDataTable("SELECT ovfokozat.szint, forma.nev, forma.jelentes, forma.lepesszam, lepesek.nev, sorrend FROM ovfokozat INNER JOIN forma ON ovfokozat.ID=forma.ovfokozatID INNER JOIN formagyakorlat ON forma.ID=formagyakorlat.formagyakorlatID INNER JOIN lepesek ON formagyakorlat.szoKod=lepesek.ID WHERE lepesek.ID='"+dataGridViewSzotar.Rows[0].Cells[0].Value.ToString()+"'");
+            dataGridViewForma.DataSource = forma;
+            dataGridViewForma.Columns["szint"].HeaderText = "Övszint";
+            dataGridViewForma.Columns["nev"].HeaderText = "Forma";
+            dataGridViewForma.Columns["jelentes"].HeaderText = "Jelentés";
+            dataGridViewForma.Columns["lepesszam"].HeaderText = "Lépésszám";
+            dataGridViewForma.Columns["nev1"].HeaderText = "Lépés neve";
         }
     }
 }

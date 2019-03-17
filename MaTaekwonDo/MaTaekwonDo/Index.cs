@@ -77,7 +77,13 @@ namespace MaTaekwonDo
 
         private void buttonLicense_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Jelenleg nem elérhető");
+            nevjegy n = new nevjegy();
+            this.Hide();
+            if (n.ShowDialog(this) == DialogResult.Cancel)
+            {
+                this.Show();
+                n.Dispose();
+            }
         }
 
         private void buttonProfil_Click(object sender, EventArgs e)
@@ -122,6 +128,13 @@ namespace MaTaekwonDo
                 this.Show();
                 k.Dispose();
             }
+        }
+
+        private void buttonLogOut_Click(object sender, EventArgs e)
+        {
+            Bejelentkezes b = new Bejelentkezes();
+            b.Show();
+            this.Dispose();
         }
     }
 }

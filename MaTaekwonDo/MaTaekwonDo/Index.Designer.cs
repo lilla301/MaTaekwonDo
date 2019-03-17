@@ -121,6 +121,7 @@
             this.buttonLogOut.Size = new System.Drawing.Size(191, 173);
             this.buttonLogOut.TabIndex = 9;
             this.buttonLogOut.UseVisualStyleBackColor = false;
+            this.buttonLogOut.Click += new System.EventHandler(this.buttonLogOut_Click);
             // 
             // buttonWebOldal
             // 
@@ -177,6 +178,7 @@
             // buttonFelhKezelo
             // 
             this.buttonFelhKezelo.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.buttonFelhKezelo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonFelhKezelo.BackgroundImage")));
             this.buttonFelhKezelo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonFelhKezelo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFelhKezelo.Location = new System.Drawing.Point(683, 535);

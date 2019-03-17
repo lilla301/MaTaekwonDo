@@ -90,6 +90,12 @@
     <Compile Include="DataBase\MySQLDataInterface.cs" />
     <Compile Include="Model\formagyakorlat.cs" />
     <Compile Include="Model\szovegek.cs" />
+    <Compile Include="nevjegy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nevjegy.Designer.cs">
+      <DependentUpon>nevjegy.cs</DependentUpon>
+    </Compile>
     <Compile Include="Profil.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="konyv.resx">
       <DependentUpon>konyv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nevjegy.resx">
+      <DependentUpon>nevjegy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Profil.resx">
       <DependentUpon>Profil.cs</DependentUpon>

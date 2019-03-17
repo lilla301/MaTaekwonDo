@@ -158,6 +158,7 @@
             this.buttonSzotar.TabIndex = 0;
             this.buttonSzotar.Text = "Koreai szakszótár";
             this.buttonSzotar.UseVisualStyleBackColor = true;
+            this.buttonSzotar.Click += new System.EventHandler(this.buttonSzotar_Click_1);
             // 
             // buttonJegyz
             // 
