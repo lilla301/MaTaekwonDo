@@ -53,7 +53,6 @@
     <Compile Include="Browser.Designer.cs">
       <DependentUpon>Browser.cs</DependentUpon>
     </Compile>
-    <Compile Include="controller\DataController.cs" />
     <Compile Include="DataBase\Adatbazis.cs" />
     <Compile Include="esemenyek.cs">
       <SubType>Form</SubType>

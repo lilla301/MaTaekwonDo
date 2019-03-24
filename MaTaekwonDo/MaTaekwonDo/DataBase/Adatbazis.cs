@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace MaTaekwonDo
 {
-    class Adatbazis
+    partial class Adatbazis
     {
-       
+
         public MySQLDataInterface kapcsolodas()
          {
              MySQLDataInterface mdi = new MySQLDataInterface();

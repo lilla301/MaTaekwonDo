@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -26,20 +27,6 @@ namespace MaTaekwonDo
             InitializeComponent();
         }
 
-        private void Felhasznalok_Load(object sender, EventArgs e)
-        {
-            mdi = a.kapcsolodas();
-            mdi.open();
-            category = mdi.getToDataTable("SELECT * FROM category");
-            dataGridViewCategory.DataSource = category;
-            dataGridViewCategory.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewCategory.Columns[0].Width = 20;
-            dataGridViewCategory.Columns[1].Width = 70;
-
-            dataGridViewUser.AllowUserToDeleteRows = false;
-            dataGridViewUser.ReadOnly = false;
-        }
-
         private void buttonExit_Click(object sender, EventArgs e)
         {
             if (modositottE)
@@ -57,6 +44,17 @@ namespace MaTaekwonDo
 
         private void buttonBetolt_Click(object sender, EventArgs e)
         {
+            mdi = a.kapcsolodas();
+            mdi.open();
+            category = mdi.getToDataTable("SELECT * FROM category");
+            dataGridViewCategory.DataSource = category;
+            dataGridViewCategory.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewCategory.Columns[0].Width = 20;
+            dataGridViewCategory.Columns[1].Width = 70;
+
+            dataGridViewCategory.ReadOnly = true;
+            dataGridViewUser.AllowUserToDeleteRows = false;
+            dataGridViewUser.ReadOnly = false;
             user = mdi.getToDataTable("Select category.name, szemelyID, felhasznalonev, jelszo, vezeteknev, keresztnev, email, neme, klub.nev, ovfokozatok.nev FROM user, ovfokozatok, category, klub WHERE klub.ID = user.klub AND category.id = user.categoryID AND ovfokozatok.id = user.ovfokozat");
             dataGridViewUser.DataSource = user;
             dataGridViewUser.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -74,41 +72,88 @@ namespace MaTaekwonDo
             dataGridViewUser.Columns["nev1"].HeaderText = "Övfokozat";
         }
 
-        private void textBoxNevSzuro_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            user.DefaultView.RowFilter = string.Format("[{0}] LIKE '%{1}%'", knevSzuro, textBoxNevSzuro.Text);
-        }
-        private void textBoxVNev_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            user.DefaultView.RowFilter = string.Format("[{0}] LIKE '%{1}%'", vNevSzuro, textBoxVNev.Text);
-        }
-
         private void buttonEdit_Click(object sender, EventArgs e)
         {
             if (dataGridViewUser.SelectedRows.Count>0 )
             {
-                Adatok data = new Adatok();
-                Szerkeszt sz = new Szerkeszt(data);
-                if (sz.ShowDialog() == DialogResult.OK)
+                try
                 {
-                    data=sz.getAdat();
-                    //data.getCategoryId().ToString();
-                    //data.getEmail();
-                    //data.getFiu();
-                    data.getfnev();
-                    //data.getKlub();
-                    //data.getKnev();
-                    //data.getOvfok();
-                    //data.getPwd();
-                    //data.getSzemelyID().ToString();
-                    //data.getVnev();
+                    d = new Adatok(Convert.ToInt32(dataGridViewUser.SelectedRows[0].Cells["name"].Value),
+                        Convert.ToInt32(dataGridViewUser.SelectedRows[0].Cells["szemelyID"].Value),
+                        dataGridViewUser.SelectedRows[0].Cells["felhasznalonev"].Value.ToString(),
+                        dataGridViewUser.SelectedRows[0].Cells["jelszo"].Value.ToString(),
+                        dataGridViewUser.SelectedRows[0].Cells["vezeteknev"].Value.ToString(),
+                        dataGridViewUser.SelectedRows[0].Cells["keresztnev"].Value.ToString(),
+                        dataGridViewUser.SelectedRows[0].Cells["email"].Value.ToString(),
+                        dataGridViewUser.SelectedRows[0].Cells["neme"].Value.ToString(),
+                        Convert.ToInt32(dataGridViewUser.SelectedRows[0].Cells["nev"].Value),
+                        Convert.ToInt32(dataGridViewUser.SelectedRows[0].Cells["nev1"].Value));
+                    Szerkeszt sz = new Szerkeszt(d);
+                    if (sz.ShowDialog() == DialogResult.OK)
+                    {
+                        d = sz.getModositottAdat();
+                        Adatbazis a = new Adatbazis();
+                        MySQLDataInterface mdi = a.kapcsolodas();
+                        mdi.open();
+                        string query = "";
+                        query += "UPDATE user ";
+                        query += "SET categoryID=" + d.getCategoryId() + "," +
+                            "felhasznalonev='" + d.getfnev() + "', jelszo='" + d.getPwd() + "', vezeteknev='" + d.getVnev() + "," +
+                            "keresztnev='" + d.getKnev() + "', email='" + d.getEmail() + "', neme='" + d.getFiu() + "'," +
+                            "klub=" + d.getKlub() + ", ovfokozat=" + d.getOvfok() + ", WHERE szemelyID=" + d.getSzemelyID() + ";";
 
-                    data.getBeillesztQuery();
+                        mdi.executeDMQuery(query);
+                        dataGridViewUser.SelectedRows[0].Cells["categoryID"].Value = d.getCategoryId();
+                        dataGridViewUser.SelectedRows[0].Cells["felhasznalonev"].Value = d.getfnev();
+                        dataGridViewUser.SelectedRows[0].Cells["jelszo"].Value = d.getPwd();
+                        dataGridViewUser.SelectedRows[0].Cells["vezeteknev"].Value = d.getVnev();
+                        dataGridViewUser.SelectedRows[0].Cells["keresztnev"].Value = d.getKnev();
+                        dataGridViewUser.SelectedRows[0].Cells["email"].Value = d.getEmail();
+                        dataGridViewUser.SelectedRows[0].Cells["neme"].Value = d.getFiu();
+                        dataGridViewUser.SelectedRows[0].Cells["klub"].Value = d.getKlub();
+                        dataGridViewUser.SelectedRows[0].Cells["ovfokozat"].Value = d.getOvfok();
+
+                    }
+                }catch(Exception ex)
+                {
+                    Debug.WriteLine(ex.Message);
                 }
             }
-            
+        }
 
+        private void textBoxNevSzuro_KeyDown(object sender, KeyEventArgs e)
+        {
+            user.DefaultView.RowFilter = string.Format("[{0}] LIKE '{1}%'", knevSzuro, textBoxNevSzuro.Text);
+        }
 
+        private void textBoxVNev_KeyDown(object sender, KeyEventArgs e)
+        {
+            user.DefaultView.RowFilter = string.Format("[{0}] LIKE '{1}%'", vNevSzuro, textBoxVNev.Text);
+        }
+
+        private void buttonDel_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Figyelem", "Biztosan törölni szeretné?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)==DialogResult.Yes)
+            {
+                try
+                {
+                    int sor = dataGridViewUser.SelectedRows[0].Index;
+                    dataGridViewUser.Rows.RemoveAt(sor);
+                    modositottE = true;
+                }
+                catch(Exception ex)
+                {
+                    throw new Exception(ex.Message);
+                }
+            }
+        }
+
+        private void buttonMentes_Click(object sender, EventArgs e)
+        {
+            if (modositottE)
+            {
+                
+            }
         }
     }
 }

@@ -88,6 +88,5 @@ namespace MaTaekwonDo
                 buttonLog.PerformClick();
             }
         }
-        
     }
 }

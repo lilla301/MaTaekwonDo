@@ -153,7 +153,7 @@ namespace MaTaekwonDo.Model
             return "Felhasználói szint: " + categoryID + ", személy azonosítója: " + szemelyID + ", felhasználónév: " + fnev + ", jelszó: " + pwd +
                 ",vezetéknév: " + Vnev + ", keresztnév: " + Knev + ", email cím: " + email + ", neme: " + fiu + ", klub: " + klub + ", övfokozat: " + ovfok;
         }
-       /* public void setAdat(Adatok modositAdat)
+       public void setAdatok(Adatok modositAdat)
         {
             this.categoryID = modositAdat.categoryID;
             this.szemelyID = modositAdat.szemelyID;
@@ -165,7 +165,7 @@ namespace MaTaekwonDo.Model
             this.fiu = modositAdat.fiu;
             this.klub = modositAdat.klub;
             this.ovfok = modositAdat.ovfok;
-        }*/
+        }
 
     }
 }

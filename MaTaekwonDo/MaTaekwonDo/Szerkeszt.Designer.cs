@@ -32,25 +32,25 @@
             this.buttonExit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxFnev = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBoxPwd = new System.Windows.Forms.TextBox();
+            this.textBoxKnev = new System.Windows.Forms.TextBox();
+            this.textBoxVnev = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxNem = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBoxKlub = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBoxOv = new System.Windows.Forms.ComboBox();
             this.buttonVissza = new System.Windows.Forms.Button();
             this.buttonKesz = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.comboBoxJog = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // buttonExit
@@ -85,26 +85,26 @@
             this.textBoxFnev.Size = new System.Drawing.Size(303, 20);
             this.textBoxFnev.TabIndex = 21;
             // 
-            // textBox6
+            // textBoxPwd
             // 
-            this.textBox6.Location = new System.Drawing.Point(221, 174);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(303, 20);
-            this.textBox6.TabIndex = 26;
+            this.textBoxPwd.Location = new System.Drawing.Point(221, 174);
+            this.textBoxPwd.Name = "textBoxPwd";
+            this.textBoxPwd.Size = new System.Drawing.Size(303, 20);
+            this.textBoxPwd.TabIndex = 26;
             // 
-            // textBox2
+            // textBoxKnev
             // 
-            this.textBox2.Location = new System.Drawing.Point(221, 238);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(303, 20);
-            this.textBox2.TabIndex = 28;
+            this.textBoxKnev.Location = new System.Drawing.Point(221, 238);
+            this.textBoxKnev.Name = "textBoxKnev";
+            this.textBoxKnev.Size = new System.Drawing.Size(303, 20);
+            this.textBoxKnev.TabIndex = 28;
             // 
-            // textBox3
+            // textBoxVnev
             // 
-            this.textBox3.Location = new System.Drawing.Point(221, 206);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(303, 20);
-            this.textBox3.TabIndex = 27;
+            this.textBoxVnev.Location = new System.Drawing.Point(221, 206);
+            this.textBoxVnev.Name = "textBoxVnev";
+            this.textBoxVnev.Size = new System.Drawing.Size(303, 20);
+            this.textBoxVnev.TabIndex = 27;
             // 
             // label2
             // 
@@ -154,12 +154,12 @@
             this.label5.TabIndex = 32;
             this.label5.Text = "Keresztnév";
             // 
-            // textBox4
+            // textBoxEmail
             // 
-            this.textBox4.Location = new System.Drawing.Point(221, 270);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(303, 20);
-            this.textBox4.TabIndex = 33;
+            this.textBoxEmail.Location = new System.Drawing.Point(221, 270);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(303, 20);
+            this.textBoxEmail.TabIndex = 33;
             // 
             // label6
             // 
@@ -185,13 +185,13 @@
             this.label7.TabIndex = 35;
             this.label7.Text = "Nem";
             // 
-            // comboBox1
+            // comboBoxNem
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(221, 301);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(303, 21);
-            this.comboBox1.TabIndex = 36;
+            this.comboBoxNem.FormattingEnabled = true;
+            this.comboBoxNem.Location = new System.Drawing.Point(221, 301);
+            this.comboBoxNem.Name = "comboBoxNem";
+            this.comboBoxNem.Size = new System.Drawing.Size(303, 21);
+            this.comboBoxNem.TabIndex = 36;
             // 
             // label8
             // 
@@ -205,13 +205,13 @@
             this.label8.TabIndex = 37;
             this.label8.Text = "Klub";
             // 
-            // comboBox2
+            // comboBoxKlub
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(221, 333);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(303, 21);
-            this.comboBox2.TabIndex = 38;
+            this.comboBoxKlub.FormattingEnabled = true;
+            this.comboBoxKlub.Location = new System.Drawing.Point(221, 333);
+            this.comboBoxKlub.Name = "comboBoxKlub";
+            this.comboBoxKlub.Size = new System.Drawing.Size(303, 21);
+            this.comboBoxKlub.TabIndex = 38;
             // 
             // label9
             // 
@@ -225,13 +225,13 @@
             this.label9.TabIndex = 39;
             this.label9.Text = "Övfokozat";
             // 
-            // comboBox3
+            // comboBoxOv
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(221, 366);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(303, 21);
-            this.comboBox3.TabIndex = 40;
+            this.comboBoxOv.FormattingEnabled = true;
+            this.comboBoxOv.Location = new System.Drawing.Point(221, 366);
+            this.comboBoxOv.Name = "comboBoxOv";
+            this.comboBoxOv.Size = new System.Drawing.Size(303, 21);
+            this.comboBoxOv.TabIndex = 40;
             // 
             // buttonVissza
             // 
@@ -274,13 +274,13 @@
             this.label10.TabIndex = 43;
             this.label10.Text = "Jogosultság";
             // 
-            // comboBox4
+            // comboBoxJog
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(221, 109);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(303, 21);
-            this.comboBox4.TabIndex = 44;
+            this.comboBoxJog.FormattingEnabled = true;
+            this.comboBoxJog.Location = new System.Drawing.Point(221, 109);
+            this.comboBoxJog.Name = "comboBoxJog";
+            this.comboBoxJog.Size = new System.Drawing.Size(303, 21);
+            this.comboBoxJog.TabIndex = 44;
             // 
             // Szerkeszt
             // 
@@ -291,25 +291,25 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CancelButton = this.buttonVissza;
             this.ClientSize = new System.Drawing.Size(709, 483);
-            this.Controls.Add(this.comboBox4);
+            this.Controls.Add(this.comboBoxJog);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.buttonKesz);
             this.Controls.Add(this.buttonVissza);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.comboBoxOv);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBoxKlub);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBoxNem);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBoxEmail);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.textBoxKnev);
+            this.Controls.Add(this.textBoxVnev);
+            this.Controls.Add(this.textBoxPwd);
             this.Controls.Add(this.textBoxFnev);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonExit);
@@ -328,24 +328,24 @@
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxFnev;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBoxPwd;
+        private System.Windows.Forms.TextBox textBoxKnev;
+        private System.Windows.Forms.TextBox textBoxVnev;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxNem;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBoxKlub;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBoxOv;
         private System.Windows.Forms.Button buttonVissza;
         private System.Windows.Forms.Button buttonKesz;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox comboBoxJog;
     }
 }
