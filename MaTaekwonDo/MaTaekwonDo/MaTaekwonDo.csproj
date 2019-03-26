@@ -60,6 +60,7 @@
     <Compile Include="esemenyek.Designer.cs">
       <DependentUpon>esemenyek.cs</DependentUpon>
     </Compile>
+    <Compile Include="myException\nevEllenorzoKivetel.cs" />
     <Compile Include="konyv.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +118,7 @@
     <Compile Include="tartalom.Designer.cs">
       <DependentUpon>tartalom.cs</DependentUpon>
     </Compile>
+    <Compile Include="Validiation\NevEllenorzes.cs" />
     <EmbeddedResource Include="Bejelentkezes.resx">
       <DependentUpon>Bejelentkezes.cs</DependentUpon>
     </EmbeddedResource>

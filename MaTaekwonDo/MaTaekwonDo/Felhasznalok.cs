@@ -22,9 +22,14 @@ namespace MaTaekwonDo
         Adatok d = new Adatok();
         string knevSzuro = "keresztnev";
         string vNevSzuro = "vezeteknev";
+        
         public Felhasznalok()
         {
             InitializeComponent();
+            textBoxNevSzuro.Visible = false;
+            textBoxVNev.Visible = false;
+            label2.Visible = false;
+            label3.Visible = false;
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
@@ -44,6 +49,7 @@ namespace MaTaekwonDo
 
         private void buttonBetolt_Click(object sender, EventArgs e)
         {
+            //Felhasználói szintek beolvasása
             mdi = a.kapcsolodas();
             mdi.open();
             category = mdi.getToDataTable("SELECT * FROM category");
@@ -51,8 +57,9 @@ namespace MaTaekwonDo
             dataGridViewCategory.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewCategory.Columns[0].Width = 20;
             dataGridViewCategory.Columns[1].Width = 70;
-
             dataGridViewCategory.ReadOnly = true;
+
+            //Felhassználók beolvasása több táblából
             dataGridViewUser.AllowUserToDeleteRows = false;
             dataGridViewUser.ReadOnly = false;
             user = mdi.getToDataTable("Select category.name, szemelyID, felhasznalonev, jelszo, vezeteknev, keresztnev, email, neme, klub.nev, ovfokozatok.nev FROM user, ovfokozatok, category, klub WHERE klub.ID = user.klub AND category.id = user.categoryID AND ovfokozatok.id = user.ovfokozat");
@@ -70,14 +77,17 @@ namespace MaTaekwonDo
             dataGridViewUser.Columns["neme"].HeaderText = "Nem";
             dataGridViewUser.Columns["nev"].HeaderText = "Klub";
             dataGridViewUser.Columns["nev1"].HeaderText = "Övfokozat";
+
+            textBoxNevSzuro.Visible = true;
+            textBoxVNev.Visible = true;
+            label2.Visible = true;
+            label3.Visible = true;
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
             if (dataGridViewUser.SelectedRows.Count>0 )
             {
-                try
-                {
                     d = new Adatok(Convert.ToInt32(dataGridViewUser.SelectedRows[0].Cells["name"].Value),
                         Convert.ToInt32(dataGridViewUser.SelectedRows[0].Cells["szemelyID"].Value),
                         dataGridViewUser.SelectedRows[0].Cells["felhasznalonev"].Value.ToString(),
@@ -91,7 +101,7 @@ namespace MaTaekwonDo
                     Szerkeszt sz = new Szerkeszt(d);
                     if (sz.ShowDialog() == DialogResult.OK)
                     {
-                        d = sz.getModositottAdat();
+                        /*d = sz.getModositottAdat();
                         Adatbazis a = new Adatbazis();
                         MySQLDataInterface mdi = a.kapcsolodas();
                         mdi.open();
@@ -111,13 +121,10 @@ namespace MaTaekwonDo
                         dataGridViewUser.SelectedRows[0].Cells["email"].Value = d.getEmail();
                         dataGridViewUser.SelectedRows[0].Cells["neme"].Value = d.getFiu();
                         dataGridViewUser.SelectedRows[0].Cells["klub"].Value = d.getKlub();
-                        dataGridViewUser.SelectedRows[0].Cells["ovfokozat"].Value = d.getOvfok();
+                        dataGridViewUser.SelectedRows[0].Cells["ovfokozat"].Value = d.getOvfok();*/
 
                     }
-                }catch(Exception ex)
-                {
-                    Debug.WriteLine(ex.Message);
-                }
+                
             }
         }
 
@@ -137,22 +144,21 @@ namespace MaTaekwonDo
             {
                 try
                 {
+                    
+
+                    Adatbazis a = new Adatbazis();
+                    MySQLDataInterface mdi = a.kapcsolodas();
+                    string query= "DELETE FROM user WHERE szemelyID =" +dataGridViewUser.SelectedRows[0].Cells["szemelyID"].Value +";";
+                    mdi.open();
+                    mdi.executeDMQuery(query);
+                    mdi.close();
                     int sor = dataGridViewUser.SelectedRows[0].Index;
                     dataGridViewUser.Rows.RemoveAt(sor);
-                    modositottE = true;
                 }
                 catch(Exception ex)
                 {
                     throw new Exception(ex.Message);
                 }
-            }
-        }
-
-        private void buttonMentes_Click(object sender, EventArgs e)
-        {
-            if (modositottE)
-            {
-                
             }
         }
     }

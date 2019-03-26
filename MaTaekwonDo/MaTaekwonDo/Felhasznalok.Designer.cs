@@ -31,7 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Felhasznalok));
             this.dataGridViewUser = new System.Windows.Forms.DataGridView();
-            this.buttonMentes = new System.Windows.Forms.Button();
             this.dataGridViewCategory = new System.Windows.Forms.DataGridView();
             this.buttonDel = new System.Windows.Forms.Button();
             this.buttonEdit = new System.Windows.Forms.Button();
@@ -43,6 +42,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxVNev = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCategory)).BeginInit();
             this.SuspendLayout();
@@ -55,20 +55,6 @@
             this.dataGridViewUser.Name = "dataGridViewUser";
             this.dataGridViewUser.Size = new System.Drawing.Size(898, 551);
             this.dataGridViewUser.TabIndex = 15;
-            // 
-            // buttonMentes
-            // 
-            this.buttonMentes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            this.buttonMentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMentes.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonMentes.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonMentes.Location = new System.Drawing.Point(12, 228);
-            this.buttonMentes.Name = "buttonMentes";
-            this.buttonMentes.Size = new System.Drawing.Size(122, 48);
-            this.buttonMentes.TabIndex = 11;
-            this.buttonMentes.Text = "Mentés";
-            this.buttonMentes.UseVisualStyleBackColor = false;
-            this.buttonMentes.Click += new System.EventHandler(this.buttonMentes_Click);
             // 
             // dataGridViewCategory
             // 
@@ -103,7 +89,7 @@
             this.buttonDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDel.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonDel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonDel.Location = new System.Drawing.Point(12, 174);
+            this.buttonDel.Location = new System.Drawing.Point(12, 497);
             this.buttonDel.Name = "buttonDel";
             this.buttonDel.Size = new System.Drawing.Size(122, 48);
             this.buttonDel.TabIndex = 12;
@@ -117,7 +103,7 @@
             this.buttonEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEdit.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonEdit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonEdit.Location = new System.Drawing.Point(12, 336);
+            this.buttonEdit.Location = new System.Drawing.Point(12, 443);
             this.buttonEdit.Name = "buttonEdit";
             this.buttonEdit.Size = new System.Drawing.Size(122, 48);
             this.buttonEdit.TabIndex = 13;
@@ -218,6 +204,19 @@
             this.textBoxVNev.TabIndex = 24;
             this.textBoxVNev.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxVNev_KeyDown);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Location = new System.Drawing.Point(12, 389);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(122, 48);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "Új";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // Felhasznalok
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -225,6 +224,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.textBoxVNev);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -234,7 +234,6 @@
             this.Controls.Add(this.buttonBetolt);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.dataGridViewUser);
-            this.Controls.Add(this.buttonMentes);
             this.Controls.Add(this.dataGridViewCategory);
             this.Controls.Add(this.buttonDel);
             this.Controls.Add(this.buttonEdit);
@@ -253,7 +252,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridViewUser;
-        private System.Windows.Forms.Button buttonMentes;
         private System.Windows.Forms.DataGridView dataGridViewCategory;
         private System.Windows.Forms.Button buttonDel;
         private System.Windows.Forms.Button buttonEdit;
@@ -265,5 +263,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxVNev;
+        private System.Windows.Forms.Button button1;
     }
 }

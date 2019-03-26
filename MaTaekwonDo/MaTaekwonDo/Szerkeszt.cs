@@ -1,4 +1,6 @@
 ﻿using MaTaekwonDo.Model;
+using MaTaekwonDo.myException;
+using MaTaekwonDo.Validation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,6 +52,36 @@ namespace MaTaekwonDo
             a.setOvfok(Convert.ToInt32(comboBoxOv.Text));
             a.setPwd(textBoxPwd.Text);
             a.setVnev(textBoxVnev.Text);
+
+            try
+            {
+                NevEllenorzes ne = new NevEllenorzes(textBoxVnev.Text);
+                ne.Ellenorzes();
+            }
+            catch(Exception ex)
+            {
+                throw new nevEllenorzoKivetel(ex.Message);
+            }
+            try
+            {
+                NevEllenorzes ne = new NevEllenorzes(textBoxKnev.Text);
+                ne.Ellenorzes();
+            }
+            catch(Exception ex)
+            {
+                throw new nevEllenorzoKivetel(ex.Message);
+            }
+
+        }
+
+        private void textBoxFnev_TextChanged(object sender, EventArgs e)
+        {
+            errorProvider1.Clear();
+        }
+
+        private void textBoxVnev_TextChanged(object sender, EventArgs e)
+        {
+            errorProvider1.Clear();
         }
     }
 }

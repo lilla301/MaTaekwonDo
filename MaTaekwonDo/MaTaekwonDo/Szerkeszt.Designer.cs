@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Szerkeszt));
             this.buttonExit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,6 +52,8 @@
             this.buttonKesz = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.comboBoxJog = new System.Windows.Forms.ComboBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonExit
@@ -84,6 +87,7 @@
             this.textBoxFnev.Name = "textBoxFnev";
             this.textBoxFnev.Size = new System.Drawing.Size(303, 20);
             this.textBoxFnev.TabIndex = 21;
+            this.textBoxFnev.TextChanged += new System.EventHandler(this.textBoxFnev_TextChanged);
             // 
             // textBoxPwd
             // 
@@ -105,6 +109,7 @@
             this.textBoxVnev.Name = "textBoxVnev";
             this.textBoxVnev.Size = new System.Drawing.Size(303, 20);
             this.textBoxVnev.TabIndex = 27;
+            this.textBoxVnev.TextChanged += new System.EventHandler(this.textBoxVnev_TextChanged);
             // 
             // label2
             // 
@@ -282,6 +287,10 @@
             this.comboBoxJog.Size = new System.Drawing.Size(303, 21);
             this.comboBoxJog.TabIndex = 44;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // Szerkeszt
             // 
             this.AcceptButton = this.buttonKesz;
@@ -318,6 +327,7 @@
             this.Name = "Szerkeszt";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MaTaekwonDo";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -347,5 +357,6 @@
         private System.Windows.Forms.Button buttonKesz;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox comboBoxJog;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

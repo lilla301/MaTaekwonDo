@@ -34,7 +34,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxPwd = new System.Windows.Forms.TextBox();
             this.textBoxUname = new System.Windows.Forms.TextBox();
-            this.buttonLog = new System.Windows.Forms.Button();
             this.buttonSolti = new System.Windows.Forms.Button();
             this.buttonMate = new System.Windows.Forms.Button();
             this.buttonHarmat = new System.Windows.Forms.Button();
@@ -42,6 +41,7 @@
             this.buttonSzasz = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonLog = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,21 +100,6 @@
             this.textBoxUname.Name = "textBoxUname";
             this.textBoxUname.Size = new System.Drawing.Size(229, 32);
             this.textBoxUname.TabIndex = 7;
-            // 
-            // buttonLog
-            // 
-            this.buttonLog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            this.buttonLog.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLog.Font = new System.Drawing.Font("Cambria", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonLog.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonLog.Location = new System.Drawing.Point(548, 576);
-            this.buttonLog.Name = "buttonLog";
-            this.buttonLog.Size = new System.Drawing.Size(229, 47);
-            this.buttonLog.TabIndex = 9;
-            this.buttonLog.Text = "Bejelentkezés";
-            this.buttonLog.UseVisualStyleBackColor = false;
-            this.buttonLog.Click += new System.EventHandler(this.buttonLog_Click);
             // 
             // buttonSolti
             // 
@@ -199,6 +184,21 @@
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 
+            // buttonLog
+            // 
+            this.buttonLog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.buttonLog.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLog.Font = new System.Drawing.Font("Cambria", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonLog.ForeColor = System.Drawing.SystemColors.Control;
+            this.buttonLog.Location = new System.Drawing.Point(548, 576);
+            this.buttonLog.Name = "buttonLog";
+            this.buttonLog.Size = new System.Drawing.Size(229, 47);
+            this.buttonLog.TabIndex = 9;
+            this.buttonLog.Text = "Bejelentkezés";
+            this.buttonLog.UseVisualStyleBackColor = false;
+            this.buttonLog.Click += new System.EventHandler(this.buttonLog_Click);
+            // 
             // Bejelentkezes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -237,7 +237,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxPwd;
         private System.Windows.Forms.TextBox textBoxUname;
-        private System.Windows.Forms.Button buttonLog;
         private System.Windows.Forms.Button buttonSolti;
         private System.Windows.Forms.Button buttonMate;
         private System.Windows.Forms.Button buttonHarmat;
@@ -245,5 +244,6 @@
         private System.Windows.Forms.Button buttonSzasz;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button buttonLog;
     }
 }
