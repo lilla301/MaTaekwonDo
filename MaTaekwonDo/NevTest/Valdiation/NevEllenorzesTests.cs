@@ -34,7 +34,7 @@ namespace MaTaekwonDo.Validation.Tests
         {
             try
             {
-                NevEllenorzes ne = new NevEllenorzes("nemecsek");
+                NevEllenorzes ne = new NevEllenorzes("admin");
                 ne.Ellenorzes();
             }
             catch (myException.nevEllenorzoKivetel nek)
@@ -52,7 +52,7 @@ namespace MaTaekwonDo.Validation.Tests
         {
             try
             {
-                NevEllenorzes ne = new NevEllenorzes("NEMECSEK");
+                NevEllenorzes ne = new NevEllenorzes("ADMIN");
                 ne.Ellenorzes();
             }
             catch (myException.nevEllenorzoKivetel nek)
@@ -70,7 +70,7 @@ namespace MaTaekwonDo.Validation.Tests
         {
             try
             {
-                NevEllenorzes ne = new NevEllenorzes("N3mecsek");
+                NevEllenorzes ne = new NevEllenorzes("Adm1n");
                 ne.Ellenorzes();
             }
             catch (myException.nevEllenorzoKivetel nek)

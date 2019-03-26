@@ -89,7 +89,8 @@ namespace MaTaekwonDo
             if (dataGridViewUser.SelectedRows.Count>0 )
             {
 
-               
+                Szerkeszt sz = new Szerkeszt();
+                sz.textBoxFnev.Text = this.dataGridViewUser.CurrentRow.Cells[0].Value.ToString();
                     /*Adatok modositottAdat = new Adatok(Convert.ToInt32(dataGridViewUser.SelectedRows[0].Cells["name"].Value),
                         Convert.ToInt32(dataGridViewUser.SelectedRows[0].Cells["szemelyID"].Value),
                         dataGridViewUser.SelectedRows[0].Cells["felhasznalonev"].Value.ToString(),
