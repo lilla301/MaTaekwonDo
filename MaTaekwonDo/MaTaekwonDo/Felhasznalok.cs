@@ -19,7 +19,7 @@ namespace MaTaekwonDo
         private DataTable user;
         bool modositottE = false;
         Adatbazis a = new Adatbazis();
-        Adatok d = new Adatok();
+        Adatok d;
         string knevSzuro = "keresztnev";
         string vNevSzuro = "vezeteknev";
         
@@ -88,7 +88,9 @@ namespace MaTaekwonDo
         {
             if (dataGridViewUser.SelectedRows.Count>0 )
             {
-                    d = new Adatok(Convert.ToInt32(dataGridViewUser.SelectedRows[0].Cells["name"].Value),
+
+               
+                    /*Adatok modositottAdat = new Adatok(Convert.ToInt32(dataGridViewUser.SelectedRows[0].Cells["name"].Value),
                         Convert.ToInt32(dataGridViewUser.SelectedRows[0].Cells["szemelyID"].Value),
                         dataGridViewUser.SelectedRows[0].Cells["felhasznalonev"].Value.ToString(),
                         dataGridViewUser.SelectedRows[0].Cells["jelszo"].Value.ToString(),
@@ -98,10 +100,10 @@ namespace MaTaekwonDo
                         dataGridViewUser.SelectedRows[0].Cells["neme"].Value.ToString(),
                         Convert.ToInt32(dataGridViewUser.SelectedRows[0].Cells["nev"].Value),
                         Convert.ToInt32(dataGridViewUser.SelectedRows[0].Cells["nev1"].Value));
-                    Szerkeszt sz = new Szerkeszt(d);
+                    Szerkeszt sz = new Szerkeszt(modositottAdat);
                     if (sz.ShowDialog() == DialogResult.OK)
                     {
-                        /*d = sz.getModositottAdat();
+                        modositottAdat = sz.getModositottAdat();
                         Adatbazis a = new Adatbazis();
                         MySQLDataInterface mdi = a.kapcsolodas();
                         mdi.open();
@@ -145,7 +147,6 @@ namespace MaTaekwonDo
                 try
                 {
                     
-
                     Adatbazis a = new Adatbazis();
                     MySQLDataInterface mdi = a.kapcsolodas();
                     string query= "DELETE FROM user WHERE szemelyID =" +dataGridViewUser.SelectedRows[0].Cells["szemelyID"].Value +";";
@@ -161,5 +162,6 @@ namespace MaTaekwonDo
                 }
             }
         }
+
     }
 }

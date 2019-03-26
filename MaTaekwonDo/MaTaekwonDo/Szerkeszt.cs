@@ -16,21 +16,21 @@ namespace MaTaekwonDo
     public partial class Szerkeszt : Form
     {
         private Adatok a;
-        public Szerkeszt(Adatok a)
+        public Szerkeszt()
         {
            
             InitializeComponent();
             a = new Adatok();
-            this.a = a;
+            //this.a = a;
             textBoxFnev.Text = a.getfnev();
             textBoxEmail.Text = a.getEmail();
             textBoxKnev.Text = a.getKnev();
             textBoxPwd.Text = a.getPwd();
             textBoxVnev.Text = a.getVnev();
-            comboBoxJog.Text = a.getCategoryId().ToString();
-            comboBoxKlub.Text = a.getKlub().ToString();
-            comboBoxNem.Text = a.getFiu();
-            comboBoxOv.Text = a.getOvfok().ToString();
+            comboBoxJog.SelectedItem = a.getCategoryId().ToString();
+            comboBoxKlub.SelectedItem = a.getKlub().ToString();
+            comboBoxNem.SelectedItem = a.getFiu();
+            comboBoxOv.SelectedItem = a.getOvfok().ToString();
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
@@ -70,6 +70,11 @@ namespace MaTaekwonDo
             catch(Exception ex)
             {
                 throw new nevEllenorzoKivetel(ex.Message);
+            }
+            if (!textBoxEmail.Text.Contains("@"))
+            {
+                this.DialogResult = DialogResult.None;
+                errorProvider1.SetError(textBoxEmail, "Az email címnek tartalmaznia kell a kukac jelet is");
             }
 
         }
