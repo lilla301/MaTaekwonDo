@@ -208,6 +208,7 @@
             this.textBoxAjanlo.ReadOnly = true;
             this.textBoxAjanlo.Size = new System.Drawing.Size(1039, 598);
             this.textBoxAjanlo.TabIndex = 0;
+            this.textBoxAjanlo.TextChanged += new System.EventHandler(this.textBoxAjanlo_TextChanged);
             // 
             // tabPageBevezeto
             // 

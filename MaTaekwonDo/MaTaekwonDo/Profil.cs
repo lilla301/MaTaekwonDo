@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using MaTaekwonDo.Model;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -54,6 +55,13 @@ namespace MaTaekwonDo
             dataGridViewUsers.Columns["vezeteknev"].HeaderText = "Vezetéknév";
             dataGridViewUsers.Columns["keresztnev"].HeaderText = "Keresztnév";
 
+            betoltNaptarat();
+        }
+        private void betoltNaptarat()
+        {
+            mdi = a.kapcsolodas();
+            mdi.open();
+
             esemenyLista = mdi.getToDataTable("SELECT * FROM esemenynaptar WHERE ev=2019");
             dataGridViewEsemenyek.DataSource = esemenyLista;
             dataGridViewEsemenyek.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -82,6 +90,29 @@ namespace MaTaekwonDo
             {
                 this.Show();
                 events.Dispose();
+            }
+
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            esemenyNaptar en = new esemenyNaptar();
+            addEsemeny ae = new addEsemeny(en);
+            if (ae.ShowDialog() == DialogResult.OK)
+            {
+                en = ae.getEsemeny();
+                Adatbazis a = new Adatbazis();
+                MySQLDataInterface mdi = a.kapcsolodas();
+                mdi.open();
+                string query = "";
+                query += "INSERT INTO esemenynaptar ";
+                query += "(ev, idopont,megnevezes) VALUES" +
+                    " (" + en.getEv() + ",'" + en.getIdopont() + "','" + en.getMegnevezes() + "')";
+
+                Console.WriteLine(query);
+                mdi.executeDMQuery(query);
+                betoltNaptarat();
+
             }
 
         }

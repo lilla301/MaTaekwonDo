@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,6 +25,24 @@ namespace MaTaekwonDo
         {
             Application.Exit();
         }
+        /// <summary>
+        /// Visszakódolás
+        /// </summary>
+        /// <param name="pwd"></param>
+        /// <returns>A jelszót kell visszaadnia</returns>
+        public string enCoding(string pwd)
+        {
+            StringBuilder sb = new StringBuilder();
+            using (MD5 encode = MD5.Create())
+            {
+                byte[] hash = encode.ComputeHash(Encoding.UTF8.GetBytes(pwd));
+                foreach(byte b in hash)
+                {
+                    sb.Append(b.ToString("X2"));
+                }
+            }
+            return sb.ToString();
+        }
         private void buttonLog_Click(object sender, EventArgs e)
         { 
             string user = textBoxUname.Text;
@@ -34,7 +53,7 @@ namespace MaTaekwonDo
             Adatbazis a = new Adatbazis();
             MySQLDataInterface mdi = a.kapcsolodas();
             mdi.open();
-            string query = "select * from user where felhasznalonev='" + user + "' AND jelszo='"+pwd+"'";
+            string query = "select * from user where felhasznalonev='" + user + "' AND jelszo='"+enCoding(pwd)+"'";
             DataTable dt = new DataTable();
             dt = mdi.getToDataTable(query);
             i = Convert.ToInt32(dt.Rows.Count.ToString());
@@ -80,12 +99,29 @@ namespace MaTaekwonDo
         {
             textBoxUname.Text = "SoltiA";
         }
-
+        /// <summary>
+        /// Tabbal működő továbblépés
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void textBoxPwd_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == Convert.ToChar(Keys.Return))
             {
                 buttonLog.PerformClick();
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedText == "Iskolai")
+            {
+                string db = "zarodolgozat2017_szeber";
+                string user = "zarodolgozat";
+                string pwd = "zarodolgozat";
+                string server = "10.0.128.111";
+                int port = 3306;
+
             }
         }
     }

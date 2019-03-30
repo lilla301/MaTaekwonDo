@@ -42,7 +42,11 @@ namespace MaTaekwonDo.Repository
                 adatok.Add(d);
             }
         }
-        
+        public void addAdat(Adatok adat)
+        {
+            adatok.Add(adat);
+            addDataToDB(adat);
+        }
         public DataTable getDataToDataTable()
         {
             DataTable ddt = new DataTable();

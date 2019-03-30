@@ -19,6 +19,12 @@ namespace MaTaekwonDo
             InitializeComponent();
             this.catId = catId;
         }
+        private void buttonVissza_Click(object sender, EventArgs e)
+        {
+           // Index i = new Index();
+            //i.Show();
+            //this.Close();
+        }
         #region Gombokkal megnyilo tabok
         private void buttonKep_Click(object sender, EventArgs e)
         {
@@ -242,14 +248,11 @@ namespace MaTaekwonDo
 
         private void buttonBev_Click_1(object sender, EventArgs e)
         {
-            t = new tartalom(catId);
+            /*t = new tartalom();
+
+            t.Show();
             t.megjelenitTab(2);
-            this.Hide();
-            if (t.ShowDialog(this) == DialogResult.Cancel)
-            {
-                this.Show();
-                t.Dispose();
-            }
+            this.Hide();*/
         }
 
         private void buttonTortent_Click(object sender, EventArgs e)
@@ -272,81 +275,6 @@ namespace MaTaekwonDo
                 this.Show();
                 t.Dispose();
             }
-        }
-
-        private void buttonMaTorten_Click_1(object sender, EventArgs e)
-        {
-            MessageBox.Show("Jelenleg ez a tartalom még nincs kész, ezért nem is elérhető! Megértését köszönjük!");
-        }
-
-        private void buttonTan_Click_1(object sender, EventArgs e)
-        {
-            MessageBox.Show("Jelenleg ez a tartalom még nincs kész, ezért nem is elérhető! Megértését köszönjük!");
-        }
-
-        private void buttonBaz_Click_1(object sender, EventArgs e)
-        {
-            MessageBox.Show("Jelenleg ez a tartalom még nincs kész, ezért nem is elérhető! Megértését köszönjük!");
-        }
-
-        private void buttonElet_Click_1(object sender, EventArgs e)
-        {
-            MessageBox.Show("Jelenleg ez a tartalom még nincs kész, ezért nem is elérhető! Megértését köszönjük!");
-        }
-
-        private void buttonMozg_Click_1(object sender, EventArgs e)
-        {
-            MessageBox.Show("Jelenleg ez a tartalom még nincs kész, ezért nem is elérhető! Megértését köszönjük!");
-        }
-
-        private void buttonEroelm_Click_1(object sender, EventArgs e)
-        {
-            MessageBox.Show("Jelenleg ez a tartalom még nincs kész, ezért nem is elérhető! Megértését köszönjük!");
-        }
-
-        private void button14_Click_1(object sender, EventArgs e)
-        {
-            MessageBox.Show("Jelenleg ez a tartalom még nincs kész, ezért nem is elérhető! Megértését köszönjük!");
-        }
-
-        private void buttonOnv_Click_1(object sender, EventArgs e)
-        {
-            MessageBox.Show("Jelenleg ez a tartalom még nincs kész, ezért nem is elérhető! Megértését köszönjük!");
-        }
-
-        private void buttonFormagy_Click_1(object sender, EventArgs e)
-        {
-            MessageBox.Show("Jelenleg ez a tartalom még nincs kész, ezért nem is elérhető! Megértését köszönjük!");
-        }
-
-        private void buttonSzabaly_Click_1(object sender, EventArgs e)
-        {
-            MessageBox.Show("Jelenleg ez a tartalom még nincs kész, ezért nem is elérhető! Megértését köszönjük!");
-        }
-
-        private void buttonKep_Click_1(object sender, EventArgs e)
-        {
-            MessageBox.Show("Jelenleg ez a tartalom még nincs kész, ezért nem is elérhető! Megértését köszönjük!");
-        }
-
-        private void buttonJegyz_Click_1(object sender, EventArgs e)
-        {
-            MessageBox.Show("Jelenleg ez a tartalom még nincs kész, ezért nem is elérhető! Megértését köszönjük!");
-        }
-
-        private void buttonVizsgaA_Click_1(object sender, EventArgs e)
-        {
-            MessageBox.Show("Jelenleg ez a tartalom még nincs kész, ezért nem is elérhető! Megértését köszönjük!");
-        }
-
-        private void buttonRend_Click_1(object sender, EventArgs e)
-        {
-            MessageBox.Show("Jelenleg ez a tartalom még nincs kész, ezért nem is elérhető! Megértését köszönjük!");
-        }
-
-        private void buttonTerem_Click_1(object sender, EventArgs e)
-        {
-            MessageBox.Show("Jelenleg ez a tartalom még nincs kész, ezért nem is elérhető! Megértését köszönjük!");
         }
     }
 }

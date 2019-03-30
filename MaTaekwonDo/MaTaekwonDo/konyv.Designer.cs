@@ -136,7 +136,6 @@
             this.buttonRend.TabIndex = 0;
             this.buttonRend.Text = "Az övfokozatok rendje";
             this.buttonRend.UseVisualStyleBackColor = true;
-            this.buttonRend.Click += new System.EventHandler(this.buttonRend_Click_1);
             // 
             // buttonKep
             // 
@@ -148,7 +147,6 @@
             this.buttonKep.TabIndex = 0;
             this.buttonKep.Text = "Képmelléklet";
             this.buttonKep.UseVisualStyleBackColor = true;
-            this.buttonKep.Click += new System.EventHandler(this.buttonKep_Click_1);
             // 
             // buttonSzotar
             // 
@@ -172,7 +170,6 @@
             this.buttonJegyz.TabIndex = 0;
             this.buttonJegyz.Text = "Orvosi jegyzetek";
             this.buttonJegyz.UseVisualStyleBackColor = true;
-            this.buttonJegyz.Click += new System.EventHandler(this.buttonJegyz_Click_1);
             // 
             // buttonVizsgaA
             // 
@@ -184,7 +181,6 @@
             this.buttonVizsgaA.TabIndex = 0;
             this.buttonVizsgaA.Text = "Részletes vizsgaanyag";
             this.buttonVizsgaA.UseVisualStyleBackColor = true;
-            this.buttonVizsgaA.Click += new System.EventHandler(this.buttonVizsgaA_Click_1);
             // 
             // buttonTerem
             // 
@@ -196,7 +192,6 @@
             this.buttonTerem.TabIndex = 0;
             this.buttonTerem.Text = "Edzőterem";
             this.buttonTerem.UseVisualStyleBackColor = true;
-            this.buttonTerem.Click += new System.EventHandler(this.buttonTerem_Click_1);
             // 
             // buttonFejl
             // 
@@ -274,7 +269,6 @@
             this.buttonOnv.TabIndex = 0;
             this.buttonOnv.Text = "Önvédelmi technikák";
             this.buttonOnv.UseVisualStyleBackColor = true;
-            this.buttonOnv.Click += new System.EventHandler(this.buttonOnv_Click_1);
             // 
             // button14
             // 
@@ -286,7 +280,6 @@
             this.button14.TabIndex = 0;
             this.button14.Text = "Formai küzdelem";
             this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.button14_Click_1);
             // 
             // buttonSzabaly
             // 
@@ -298,7 +291,6 @@
             this.buttonSzabaly.TabIndex = 0;
             this.buttonSzabaly.Text = "A formagyakorlat versenyszabályai";
             this.buttonSzabaly.UseVisualStyleBackColor = true;
-            this.buttonSzabaly.Click += new System.EventHandler(this.buttonSzabaly_Click_1);
             // 
             // buttonFormagy
             // 
@@ -310,7 +302,6 @@
             this.buttonFormagy.TabIndex = 0;
             this.buttonFormagy.Text = "Formagyakorlat";
             this.buttonFormagy.UseVisualStyleBackColor = true;
-            this.buttonFormagy.Click += new System.EventHandler(this.buttonFormagy_Click_1);
             // 
             // buttonEroelm
             // 
@@ -322,7 +313,6 @@
             this.buttonEroelm.TabIndex = 0;
             this.buttonEroelm.Text = "Erő és gyorsaság elmélete";
             this.buttonEroelm.UseVisualStyleBackColor = true;
-            this.buttonEroelm.Click += new System.EventHandler(this.buttonEroelm_Click_1);
             // 
             // buttonBaz
             // 
@@ -334,7 +324,6 @@
             this.buttonBaz.TabIndex = 0;
             this.buttonBaz.Text = "Bázis, vagy alapgyakorlatok";
             this.buttonBaz.UseVisualStyleBackColor = true;
-            this.buttonBaz.Click += new System.EventHandler(this.buttonBaz_Click_1);
             // 
             // buttonMozg
             // 
@@ -346,7 +335,6 @@
             this.buttonMozg.TabIndex = 0;
             this.buttonMozg.Text = "A Taekwon-do mozgásanyaga";
             this.buttonMozg.UseVisualStyleBackColor = true;
-            this.buttonMozg.Click += new System.EventHandler(this.buttonMozg_Click_1);
             // 
             // buttonMaTorten
             // 
@@ -358,7 +346,6 @@
             this.buttonMaTorten.TabIndex = 0;
             this.buttonMaTorten.Text = "A magyar Taekwon-do története";
             this.buttonMaTorten.UseVisualStyleBackColor = true;
-            this.buttonMaTorten.Click += new System.EventHandler(this.buttonMaTorten_Click_1);
             // 
             // buttonElet
             // 
@@ -370,7 +357,6 @@
             this.buttonElet.TabIndex = 0;
             this.buttonElet.Text = "Életpontok";
             this.buttonElet.UseVisualStyleBackColor = true;
-            this.buttonElet.Click += new System.EventHandler(this.buttonElet_Click_1);
             // 
             // buttonTortent
             // 
@@ -406,7 +392,6 @@
             this.buttonTan.TabIndex = 0;
             this.buttonTan.Text = "A Taekwon-do tanai";
             this.buttonTan.UseVisualStyleBackColor = true;
-            this.buttonTan.Click += new System.EventHandler(this.buttonTan_Click_1);
             // 
             // buttonAjanlas
             // 

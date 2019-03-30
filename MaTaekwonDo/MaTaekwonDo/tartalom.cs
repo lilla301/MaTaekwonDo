@@ -134,6 +134,12 @@ namespace MaTaekwonDo
             }
             textBoxAjanlo.Text = szoveg;
         }
+
+        private void textBoxAjanlo_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
         private void buttonExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -147,14 +153,13 @@ namespace MaTaekwonDo
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            
-                Adatbazis a = new Adatbazis();
-                MySQLDataInterface mdi = a.connectToDic();
-                mdi.open();
-                string query = "UPDATE szoveg SET szoveg='" + textBoxAjanlo.Text + "' where id=" + 1;
-                DataTable dt = new DataTable();
-                dt = mdi.getToDataTable(query);
-                DialogResult dialog = MessageBox.Show(this, "Sikeres mentés", "Info", MessageBoxButtons.OK,MessageBoxIcon.Information);
+            Adatbazis a = new Adatbazis();
+            MySQLDataInterface mdi = a.connectToDic();
+            mdi.open();
+            string query = "UPDATE szoveg SET szoveg='"+textBoxAjanlo.Text+"' where id=" + 1;
+            DataTable dt = new DataTable();
+            dt = mdi.getToDataTable(query);
+            mdi.frissitAdatokat(dt);
 
         }
 

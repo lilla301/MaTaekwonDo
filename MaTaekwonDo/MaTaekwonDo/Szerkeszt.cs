@@ -1,6 +1,6 @@
 ﻿using MaTaekwonDo.Model;
 using MaTaekwonDo.myException;
-using MaTaekwonDo.Validation;
+using MaTaekwonDo.Valdiation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,22 +15,50 @@ namespace MaTaekwonDo
 {
     public partial class Szerkeszt : Form
     {
+        private DataTable catDT;
+        private DataTable nemDT;
+        private DataTable klubDT;
+        private DataTable ovDT;
         private Adatok a;
-        public Szerkeszt()
+        public Szerkeszt(Adatok a)
         {
            
             InitializeComponent();
-            a = new Adatok();
-            //this.a = a;
+            
+            this.a = a;
             textBoxFnev.Text = a.getfnev();
             textBoxEmail.Text = a.getEmail();
             textBoxKnev.Text = a.getKnev();
             textBoxPwd.Text = a.getPwd();
             textBoxVnev.Text = a.getVnev();
-            comboBoxJog.SelectedItem = a.getCategoryId().ToString();
-            comboBoxKlub.SelectedItem = a.getKlub().ToString();
             comboBoxNem.SelectedItem = a.getFiu();
-            comboBoxOv.SelectedItem = a.getOvfok().ToString();
+
+            Adatbazis db = new Adatbazis();
+            MySQLDataInterface mdi = db.kapcsolodas();
+            mdi.open();
+
+            string query = "SELECT * FROM category";
+            catDT=mdi.getToDataTable(query);
+            comboBoxJog.DataSource = catDT;
+            comboBoxJog.ValueMember = "id";
+            comboBoxJog.DisplayMember = "name";
+ 
+            comboBoxJog.SelectedIndex = a.getCategoryId() - 1;
+
+            string queryKlub = "SELECT * FROM klub";
+            klubDT = mdi.getToDataTable(queryKlub);
+            comboBoxKlub.DataSource = klubDT;
+            comboBoxKlub.ValueMember = "ID";
+            comboBoxKlub.DisplayMember = "nev";
+            comboBoxKlub.SelectedIndex = a.getKlub();
+
+            string queryOv = "SELECT * FROM ovfokozatok";
+            ovDT = mdi.getToDataTable(queryOv);
+            comboBoxOv.DataSource = ovDT;
+            comboBoxOv.ValueMember = "id";
+            comboBoxOv.DisplayMember = "nev";
+
+            comboBoxOv.SelectedIndex = a.getOvfok();
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
@@ -43,50 +71,54 @@ namespace MaTaekwonDo
         }
         private void buttonKesz_Click(object sender, EventArgs e)
         {
-            a.setFnev(textBoxFnev.Text);
-            a.setCategoryId(Convert.ToInt32(comboBoxJog.Text));
-            a.setEmail(textBoxEmail.Text);
-            a.setFiu(comboBoxNem.Text);
-            a.setKlub(Convert.ToInt32(comboBoxKlub.Text));
-            a.setKnev(textBoxKnev.Text);
-            a.setOvfok(Convert.ToInt32(comboBoxOv.Text));
-            a.setPwd(textBoxPwd.Text);
-            a.setVnev(textBoxVnev.Text);
+            NevEllenorzes ne = new NevEllenorzes(textBoxKnev.Text);
+            try
+            {
+                ne.Ellenorzes();
+                a.setKnev(textBoxKnev.Text);
+            }
+            catch(nevEllenorzoKivetel nek)
+            {
+                errorProvider1.SetError(textBoxKnev, nek.Message);
+            }
 
-            try
+            
+            a.setFnev(textBoxFnev.Text);
+            if (isValidRights())
             {
-                NevEllenorzes ne = new NevEllenorzes(textBoxVnev.Text);
-                ne.Ellenorzes();
+                a.setCategoryId(Convert.ToInt32(comboBoxJog.SelectedValue));
             }
-            catch(Exception ex)
-            {
-                throw new nevEllenorzoKivetel(ex.Message);
-            }
-            try
-            {
-                NevEllenorzes ne = new NevEllenorzes(textBoxKnev.Text);
-                ne.Ellenorzes();
-            }
-            catch(Exception ex)
-            {
-                throw new nevEllenorzoKivetel(ex.Message);
-            }
-            if (!textBoxEmail.Text.Contains("@"))
+            else
             {
                 this.DialogResult = DialogResult.None;
-                errorProvider1.SetError(textBoxEmail, "Az email címnek tartalmaznia kell a kukac jelet is");
+                errorProvider1.SetError(comboBoxJog, "A választás kötelező!");
             }
-
+           
+            a.setEmail(textBoxEmail.Text);
+            
+            a.setKlub(Convert.ToInt32(comboBoxKlub.SelectedValue));
+            if (isValidGender())
+            {
+                a.setFiu(comboBoxNem.SelectedItem.ToString());
+            }
+            else
+            {
+                
+                this.DialogResult = DialogResult.None;
+                errorProvider1.SetError(comboBoxNem, "A választás kötelező!");
+            }
+            
+            a.setOvfok(Convert.ToInt32(comboBoxOv.SelectedValue));
+            a.setPwd(textBoxPwd.Text);
+            a.setVnev(textBoxVnev.Text);
         }
-
-        private void textBoxFnev_TextChanged(object sender, EventArgs e)
+        private bool isValidGender()
         {
-            errorProvider1.Clear();
+            return comboBoxNem.SelectedItem != null;
         }
-
-        private void textBoxVnev_TextChanged(object sender, EventArgs e)
+        private bool isValidRights()
         {
-            errorProvider1.Clear();
+            return comboBoxJog.SelectedItem != null;
         }
     }
 }

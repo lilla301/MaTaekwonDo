@@ -5,14 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace MaTaekwonDo
 {
     partial class Adatbazis
     {
-
         public MySQLDataInterface kapcsolodas()
          {
+            
              MySQLDataInterface mdi = new MySQLDataInterface();
              mdi.setErrorToUserInterface(true);
              mdi.setErrorToGraphicalUserInterface(false);

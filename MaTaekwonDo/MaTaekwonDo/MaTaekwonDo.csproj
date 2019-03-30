@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addEsemeny.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addEsemeny.Designer.cs">
+      <DependentUpon>addEsemeny.cs</DependentUpon>
+    </Compile>
     <Compile Include="Browser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,7 @@
     <Compile Include="esemenyek.Designer.cs">
       <DependentUpon>esemenyek.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\esemenyNaptar.cs" />
     <Compile Include="myException\nevEllenorzoKivetel.cs" />
     <Compile Include="konyv.cs">
       <SubType>Form</SubType>
@@ -104,6 +111,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\AdatDataBase.cs" />
     <Compile Include="Repository\AdatRepo.cs" />
     <Compile Include="Szerkeszt.cs">
       <SubType>Form</SubType>
@@ -117,7 +125,10 @@
     <Compile Include="tartalom.Designer.cs">
       <DependentUpon>tartalom.cs</DependentUpon>
     </Compile>
-    <Compile Include="Validiation\NevEllenorzes.cs" />
+    <Compile Include="Valdiation\NevEllenorzes.cs" />
+    <EmbeddedResource Include="addEsemeny.resx">
+      <DependentUpon>addEsemeny.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Bejelentkezes.resx">
       <DependentUpon>Bejelentkezes.cs</DependentUpon>
     </EmbeddedResource>
@@ -170,6 +181,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Tests\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

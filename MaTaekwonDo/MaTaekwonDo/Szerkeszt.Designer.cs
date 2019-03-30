@@ -87,7 +87,6 @@
             this.textBoxFnev.Name = "textBoxFnev";
             this.textBoxFnev.Size = new System.Drawing.Size(303, 20);
             this.textBoxFnev.TabIndex = 21;
-            this.textBoxFnev.TextChanged += new System.EventHandler(this.textBoxFnev_TextChanged);
             // 
             // textBoxPwd
             // 
@@ -109,7 +108,6 @@
             this.textBoxVnev.Name = "textBoxVnev";
             this.textBoxVnev.Size = new System.Drawing.Size(303, 20);
             this.textBoxVnev.TabIndex = 27;
-            this.textBoxVnev.TextChanged += new System.EventHandler(this.textBoxVnev_TextChanged);
             // 
             // label2
             // 
@@ -192,7 +190,14 @@
             // 
             // comboBoxNem
             // 
+            this.comboBoxNem.AutoCompleteCustomSource.AddRange(new string[] {
+            "nő",
+            "férfi"});
             this.comboBoxNem.FormattingEnabled = true;
+            this.comboBoxNem.Items.AddRange(new object[] {
+            "Válassz",
+            "nő",
+            "férfi"});
             this.comboBoxNem.Location = new System.Drawing.Point(221, 301);
             this.comboBoxNem.Name = "comboBoxNem";
             this.comboBoxNem.Size = new System.Drawing.Size(303, 21);
@@ -281,6 +286,10 @@
             // 
             // comboBoxJog
             // 
+            this.comboBoxJog.AutoCompleteCustomSource.AddRange(new string[] {
+            "1",
+            "2",
+            "3"});
             this.comboBoxJog.FormattingEnabled = true;
             this.comboBoxJog.Location = new System.Drawing.Point(221, 109);
             this.comboBoxJog.Name = "comboBoxJog";
